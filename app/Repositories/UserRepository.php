@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class UserRepository
  * @package App\Repositories
- * @version August 16, 2022, 6:14 am UTC
+ * @version September 2, 2022, 8:24 am UTC
 */
 
 class UserRepository extends BaseRepository
@@ -18,7 +18,17 @@ class UserRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name',
-        'email'
+        'email',
+        'email_verified_at',
+        'password',
+        'photo',
+        'remember_token',
+        'agama',
+        'jenis_kelamin',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'telepon',
+        'alamat'
     ];
 
     /**

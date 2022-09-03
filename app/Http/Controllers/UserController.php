@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\UserDataTable;
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
-use Datatables;
 
 class UserController extends AppBaseController
 {
@@ -26,19 +24,13 @@ class UserController extends AppBaseController
     /**
      * Display a listing of the User.
      *
-     * @param Request $request
+     * @param UserDataTable $userDataTable
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDataTable)
     {
-        if ($request->ajax()) {
-            return Datatables::of((new UserDataTable())->get())
-            ->addIndexColumn()
-            ->make(true);
-        }
-    
-        return view('users.index');
+        return $userDataTable->render('users.index');
     }
 
     /**
@@ -61,8 +53,11 @@ class UserController extends AppBaseController
     public function store(CreateUserRequest $request)
     {
         $input = $request->all();
+
         $user = $this->userRepository->create($input);
+
         Flash::success('User saved successfully.');
+
         return redirect(route('users.index'));
     }
 
@@ -76,10 +71,13 @@ class UserController extends AppBaseController
     public function show($id)
     {
         $user = $this->userRepository->find($id);
+
         if (empty($user)) {
             Flash::error('User not found');
+
             return redirect(route('users.index'));
         }
+
         return view('users.show')->with('user', $user);
     }
 
@@ -93,10 +91,13 @@ class UserController extends AppBaseController
     public function edit($id)
     {
         $user = $this->userRepository->find($id);
+
         if (empty($user)) {
             Flash::error('User not found');
+
             return redirect(route('users.index'));
         }
+
         return view('users.edit')->with('user', $user);
     }
 
@@ -111,12 +112,17 @@ class UserController extends AppBaseController
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->find($id);
+
         if (empty($user)) {
             Flash::error('User not found');
+
             return redirect(route('users.index'));
         }
+
         $user = $this->userRepository->update($request->all(), $id);
+
         Flash::success('User updated successfully.');
+
         return redirect(route('users.index'));
     }
 
@@ -130,7 +136,17 @@ class UserController extends AppBaseController
     public function destroy($id)
     {
         $user = $this->userRepository->find($id);
-        $user->delete();
-        return $this->sendSuccess('User deleted successfully.');
+
+        if (empty($user)) {
+            Flash::error('User not found');
+
+            return redirect(route('users.index'));
+        }
+
+        $this->userRepository->delete($id);
+
+        Flash::success('User deleted successfully.');
+
+        return redirect(route('users.index'));
     }
 }

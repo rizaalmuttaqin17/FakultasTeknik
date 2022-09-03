@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('title')
-    Detail Pengguna
+    User Details 
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
-        <h1>Detail Pengguna</h1>
+        <h1>User Details</h1>
         <div class="section-header-breadcrumb">
-            <a href="{{ route('users.index') }}" class="btn btn-primary form-btn float-right">Kembali</a>
+            <a href="{{ route('users.index') }}"
+                 class="btn btn-primary form-btn float-right">Back</a>
         </div>
       </div>
    @include('stisla-templates::common.errors')

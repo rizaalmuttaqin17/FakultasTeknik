@@ -65,12 +65,12 @@ class UserDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id' => ['title' => 'No.', 'orderable' => false, 'searchable' => false, 'render' => function() {
+                return 'function(data,type,fullData,meta){return meta.settings._iDisplayStart+meta.row+1;}';
+            }],
             'name',
             'email',
-            'email_verified_at',
-            'password',
             'photo',
-            'remember_token',
             'agama',
             'jenis_kelamin',
             'tempat_lahir',

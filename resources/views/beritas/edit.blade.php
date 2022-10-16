@@ -17,7 +17,7 @@
                      <div class="col-lg-12">
                          <div class="card">
                              <div class="card-body ">
-                                    {!! Form::model($berita, ['route' => ['beritas.update', $berita->id], 'method' => 'patch']) !!}
+                                    {!! Form::model($berita, ['route' => ['beritas.update', $berita->id], 'method' => 'patch', 'files' => 'true']) !!}
                                         <div class="row">
                                             @include('beritas.fields')
                                         </div>

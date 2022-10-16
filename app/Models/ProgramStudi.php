@@ -78,6 +78,6 @@ class ProgramStudi extends Model
      **/
     public function berita()
     {
-        return $this->hasMany(\App\Models\Beritum::class, 'program_studi_id');
+        return $this->hasMany(\App\Models\Berita::class, 'program_studi_id');
     }
 }

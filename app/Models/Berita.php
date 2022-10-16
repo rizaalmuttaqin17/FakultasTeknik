@@ -56,7 +56,7 @@ class Berita extends Model
         'users_id' => 'integer',
         'kategori_id' => 'integer',
         'program_studi_id' => 'integer',
-        'banner' => 'string',
+        // 'banner' => 'string',
         'judul' => 'string',
         'isi' => 'string'
     ];
@@ -70,7 +70,7 @@ class Berita extends Model
         'users_id' => 'nullable',
         'kategori_id' => 'nullable',
         'program_studi_id' => 'nullable',
-        'banner' => 'nullable|string|max:150',
+        // 'banner' => 'nullable|string|max:150',
         'judul' => 'nullable|string|max:254',
         'isi' => 'nullable|string',
         'created_at' => 'nullable',
@@ -89,7 +89,7 @@ class Berita extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function programStudi()
+    public function prodi()
     {
         return $this->belongsTo(\App\Models\ProgramStudi::class, 'program_studi_id');
     }

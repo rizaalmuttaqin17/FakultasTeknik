@@ -29,7 +29,7 @@ class BeritaDataTable extends DataTable
      */
     public function query(Berita $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('kategori', 'prodi', 'users');
     }
 
     /**
@@ -65,9 +65,12 @@ class BeritaDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'users_id',
-            'kategori_id',
-            'program_studi_id',
+            'id' => ['title' => 'No.', 'orderable' => false, 'searchable' => false, 'render' => function() {
+                return 'function(data,type,fullData,meta){return meta.settings._iDisplayStart+meta.row+1;}';
+            }],
+            'users_id' => ['title' => 'Penulis', 'data' => 'users.name', 'name'=>'users.name'],
+            'kategori_id' => ['title' => 'Kategori', 'data' => 'kategori.kategori', 'name'=>'kategori.kategori'],
+            'program_studi_id' => ['title' => 'Program Studi', 'data' => 'prodi.nama', 'name'=>'prodi.nama'],
             'banner',
             'judul',
             'isi'

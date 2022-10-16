@@ -1,18 +1,18 @@
-<!-- Fakultas Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('fakultas_id', 'Fakultas Id:') !!}
-    {!! Form::number('fakultas_id', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Kode Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('kode', 'Kode:') !!}
+<div class="form-group col-sm-4">
+    {!! Form::label('kode', 'Kode Program Studi') !!}
     {!! Form::text('kode', null, ['class' => 'form-control','maxlength' => 15,'maxlength' => 15]) !!}
 </div>
 
+<!-- Fakultas Id Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('fakultas_id', 'Fakultas') !!}
+    {!! Form::select('fakultas_id', $fakultas, null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Nama Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('nama', 'Nama:') !!}
+<div class="form-group col-sm-4">
+    {!! Form::label('nama', 'Program Studi') !!}
     {!! Form::text('nama', null, ['class' => 'form-control','maxlength' => 45,'maxlength' => 45]) !!}
 </div>
 

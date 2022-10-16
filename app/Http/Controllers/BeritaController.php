@@ -9,7 +9,13 @@ use App\Http\Requests\UpdateBeritaRequest;
 use App\Repositories\BeritaRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Kategori;
+use App\Models\ProgramStudi;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Response;
+use Carbon\Carbon;
+use DB;
 
 class BeritaController extends AppBaseController
 {
@@ -40,7 +46,8 @@ class BeritaController extends AppBaseController
      */
     public function create()
     {
-        return view('beritas.create');
+        $prodi = ProgramStudi::pluck('nama', 'id');
+        return view('beritas.create', compact('prodi'));
     }
 
     /**
@@ -52,12 +59,27 @@ class BeritaController extends AppBaseController
      */
     public function store(CreateBeritaRequest $request)
     {
-        $input = $request->all();
-
+        $input = $request->except('banner');
+        $date= Carbon::now()->format('Y_m_d');
+        if($request->hasFile('banner')) {
+            $banner = $request->file('banner');
+            $filename = str_replace(" ", "_",$banner->getClientOriginalName());
+            $filenames = $date.'_'.$filename;
+            $path=$request->banner->storeAs('public/banner', $filenames,'local');
+            $input['banner']= 'storage' . substr($path, strpos($path, '/'));
+        }
+        if(is_numeric($input['kategori_id'])==true){
+            $request['kategori_id'] = $input['kategori_id'];
+        } else {
+            $kategori = new Kategori;
+            $kategori['kategori'] = $input['kategori_id'];
+            $kategori->save();
+            $kategoris = Kategori::orderBy('id', 'desc')->first();
+            $input['kategori_id'] = $kategoris['id'];
+        }
         $berita = $this->beritaRepository->create($input);
 
         Flash::success('Berita saved successfully.');
-
         return redirect(route('beritas.index'));
     }
 
@@ -71,13 +93,10 @@ class BeritaController extends AppBaseController
     public function show($id)
     {
         $berita = $this->beritaRepository->find($id);
-
         if (empty($berita)) {
             Flash::error('Berita not found');
-
             return redirect(route('beritas.index'));
         }
-
         return view('beritas.show')->with('berita', $berita);
     }
 
@@ -91,6 +110,7 @@ class BeritaController extends AppBaseController
     public function edit($id)
     {
         $berita = $this->beritaRepository->find($id);
+        $prodi = ProgramStudi::pluck('nama', 'id');
 
         if (empty($berita)) {
             Flash::error('Berita not found');
@@ -98,7 +118,7 @@ class BeritaController extends AppBaseController
             return redirect(route('beritas.index'));
         }
 
-        return view('beritas.edit')->with('berita', $berita);
+        return view('beritas.edit', compact('prodi'))->with('berita', $berita);
     }
 
     /**
@@ -139,14 +159,45 @@ class BeritaController extends AppBaseController
 
         if (empty($berita)) {
             Flash::error('Berita not found');
-
             return redirect(route('beritas.index'));
         }
 
         $this->beritaRepository->delete($id);
-
         Flash::success('Berita deleted successfully.');
-
         return redirect(route('beritas.index'));
+    }
+
+    public function penulis(Request $request) {
+        $search = $request->search;
+        if($search == ''){
+            $penulis = User::orderby('name','asc')->select('id','name')->limit(5)->get();
+        }else{
+            $penulis = User::orderby('name','asc')->select('id','name')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
+        }
+        $response = array();
+        foreach($penulis as $item){
+            $response[] = array(
+                "id"=>$item->id,
+                "text"=>$item->name
+            );
+        }
+        return response()->json($response);
+    }
+
+    public function kategori(Request $request) {
+        $search = $request->search;
+        if($search == ''){
+            $kategori = Kategori::orderby('kategori','asc')->select('id','kategori')->limit(5)->get();
+        }else{
+            $kategori = Kategori::orderby('kategori','asc')->select('id','kategori')->where('kategori', 'like', '%' .$search . '%')->limit(5)->get();
+        }
+        $response = array();
+        foreach($kategori as $item){
+            $response[] = array(
+                "id"=>$item->id,
+                "text"=>$item->kategori
+            );
+        }
+        return response()->json($response);
     }
 }

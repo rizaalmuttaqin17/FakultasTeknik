@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Permissions;
+use Spatie\Permission\Models\Permission;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -24,10 +24,10 @@ class PermissionsDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Permissions $model
+     * @param \Spatie\Permission\Models\Permission $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Permissions $model)
+    public function query(Permission $model)
     {
         return $model->newQuery();
     }
@@ -65,6 +65,9 @@ class PermissionsDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id' => ['title' => 'No.', 'orderable' => false, 'searchable' => false, 'render' => function() {
+                return 'function(data,type,fullData,meta){return meta.settings._iDisplayStart+meta.row+1;}';
+            }],
             'name',
             'guard_name'
         ];

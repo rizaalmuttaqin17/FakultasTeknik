@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Roles;
+use Spatie\Permission\Models\Role;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -24,10 +24,10 @@ class RolesDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Roles $model
+     * @param \Spatie\Permission\Models\Role $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Roles $model)
+    public function query(Role $model)
     {
         return $model->newQuery();
     }
@@ -65,6 +65,9 @@ class RolesDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id' => ['title' => 'No.', 'orderable' => false, 'searchable' => false, 'render' => function() {
+                return 'function(data,type,fullData,meta){return meta.settings._iDisplayStart+meta.row+1;}';
+            }],
             'name',
             'guard_name'
         ];

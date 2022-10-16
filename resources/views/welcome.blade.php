@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zxx">
+<html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -231,255 +231,427 @@
                     <div class="tab_content">
                         <div class="tabs_item">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="blog-left">
-                                        <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        <span>Teknik Industri</span>
-                                        <h3>Teknologi Semi Cair dan Padat</h3>
-                                        <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                        <ul class="blog-list mt-4">
-                                            <li>
-                                                <a href="">
-                                                    <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                    Riza Al Muttaqin
-                                                </a>
-                                            </li>
-                                            <li><i class="flaticon-appointment"></i> 03 January 2021</li>
-                                        </ul>
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list mt-4">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                        </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                            <div class="col-lg-6 mt-3">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="tabs_item">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="blog-left">
-                                        <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        <span>Teknik Industri</span>
-                                        <h3>Teknologi Semi Cair dan Padat</h3>
-                                        <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                        <ul class="blog-list mt-4">
-                                            <li>
-                                                <a href="">
-                                                    <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                    Riza Al Muttaqin
-                                                </a>
-                                            </li>
-                                            <li><i class="flaticon-appointment"></i> 03 January 2021</li>
-                                        </ul>
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list mt-4">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                        </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                            <div class="col-lg-6 mt-3">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="tabs_item">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="blog-left">
-                                        <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        <span>Teknik Industri</span>
-                                        <h3>Teknologi Semi Cair dan Padat</h3>
-                                        <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                        <ul class="blog-list mt-4">
-                                            <li>
-                                                <a href="">
-                                                    <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                    Riza Al Muttaqin
-                                                </a>
-                                            </li>
-                                            <li><i class="flaticon-appointment"></i> 03 January 2021</li>
-                                        </ul>
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list mt-4">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                        </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                            <div class="col-lg-6 mt-3">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="tabs_item">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="blog-left">
-                                        <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        <span>Teknik Industri</span>
-                                        <h3>Teknologi Semi Cair dan Padat</h3>
-                                        <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                        <ul class="blog-list mt-4">
-                                            <li>
-                                                <a href="">
-                                                    <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                    Riza Al Muttaqin
-                                                </a>
-                                            </li>
-                                            <li><i class="flaticon-appointment"></i> 03 January 2021</li>
-                                        </ul>
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list mt-4">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
-                                            </div>
-                                        </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
-                                    <div class="blog-right">
-                                        <div class="row">
-                                            <div class="col-lg-6 align-self-center">
-                                                <img src="{{ asset('img/photos/blog-small.png') }}" alt="">
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs_item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
                                             </div>
-                                            <div class="col-lg-6 mt-3">
-                                                <span>Teknik Industri</span>
-                                                <h3>Teknologi Semi Cair dan Padat</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
-                                                <ul class="blog-list">
-                                                    <li>
-                                                        <a href="">
-                                                            <img src="{{ asset('img/photos/avatar.png') }}" alt="">
-                                                            Riza Al Muttaqin
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs_item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs_item">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="blog">
+                                        <a href="">
+                                            <div class="row">
+                                                <div class="col-lg-6 align-self-center">
+                                                    <ul class="blog-list">
+                                                        <li>
+                                                            <span>Teknik Industri</span>
+                                                        </li>
+                                                        <li>30 January 2021</li>
+                                                    </ul>
+                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
+                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mt-3">
+                                    <div class="blog">
+                                        <a href="">
+                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <ul class="blog-list mt-3">
+                                                <li><span>Teknik Industri</span></li>
+                                                <li>30 January 2021</li>
+                                            </ul>
+                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

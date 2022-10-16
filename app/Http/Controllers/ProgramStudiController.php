@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateProgramStudiRequest;
 use App\Repositories\ProgramStudiRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Fakultas;
 use Response;
 
 class ProgramStudiController extends AppBaseController
@@ -40,7 +41,8 @@ class ProgramStudiController extends AppBaseController
      */
     public function create()
     {
-        return view('program_studis.create');
+        $fakultas = Fakultas::pluck('nama', 'id');
+        return view('program_studis.create', compact('fakultas'));
     }
 
     /**
@@ -91,14 +93,12 @@ class ProgramStudiController extends AppBaseController
     public function edit($id)
     {
         $programStudi = $this->programStudiRepository->find($id);
-
+        $fakultas = Fakultas::pluck('nama', 'id');
         if (empty($programStudi)) {
             Flash::error('Program Studi not found');
-
             return redirect(route('programStudis.index'));
         }
-
-        return view('program_studis.edit')->with('programStudi', $programStudi);
+        return view('program_studis.edit', compact('fakultas'))->with('programStudi', $programStudi);
     }
 
     /**

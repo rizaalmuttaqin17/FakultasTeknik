@@ -61,6 +61,6 @@ class Kategori extends Model
      **/
     public function berita()
     {
-        return $this->hasMany(\App\Models\Beritum::class, 'kategori_id');
+        return $this->hasMany(\App\Models\Berita::class, 'kategori_id');
     }
 }

@@ -53,7 +53,7 @@
 <script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
 <script src="{{ asset('assets/js/select2.min.js') }}"></script>
-
+<script src="https://cdn.ckeditor.com/ckeditor5/35.2.0/classic/ckeditor.js"></script>
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
 
 <!-- Template JS File -->
@@ -78,5 +78,22 @@
             }
         };
     }(jQuery));
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#berita' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    /* DecoupledEditor
+        .create( document.querySelector( '#editor' ) )
+        .then( editor => {
+            const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+            toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+        } )
+        .catch( error => {
+            console.error( error );
+        } ); */
 </script>
 </html>

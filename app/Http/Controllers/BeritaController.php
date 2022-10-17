@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Response;
 use Carbon\Carbon;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class BeritaController extends AppBaseController
 {
@@ -46,8 +47,8 @@ class BeritaController extends AppBaseController
      */
     public function create()
     {
-        $prodi = ProgramStudi::pluck('nama', 'id');
-        return view('beritas.create', compact('prodi'));
+        $kategori = Kategori::pluck('kategori', 'id');
+        return view('beritas.create', compact('kategori'));
     }
 
     /**
@@ -77,6 +78,7 @@ class BeritaController extends AppBaseController
             $kategoris = Kategori::orderBy('id', 'desc')->first();
             $input['kategori_id'] = $kategoris['id'];
         }
+        $input['users_id'] = Auth::id();
         $berita = $this->beritaRepository->create($input);
 
         Flash::success('Berita saved successfully.');
@@ -110,15 +112,12 @@ class BeritaController extends AppBaseController
     public function edit($id)
     {
         $berita = $this->beritaRepository->find($id);
-        $prodi = ProgramStudi::pluck('nama', 'id');
-
+        $kategori = Kategori::pluck('kategori', 'id');
         if (empty($berita)) {
             Flash::error('Berita not found');
-
             return redirect(route('beritas.index'));
         }
-
-        return view('beritas.edit', compact('prodi'))->with('berita', $berita);
+        return view('beritas.edit', compact('kategori'))->with('berita', $berita);
     }
 
     /**
@@ -132,17 +131,13 @@ class BeritaController extends AppBaseController
     public function update($id, UpdateBeritaRequest $request)
     {
         $berita = $this->beritaRepository->find($id);
-
         if (empty($berita)) {
             Flash::error('Berita not found');
-
             return redirect(route('beritas.index'));
         }
-
         $berita = $this->beritaRepository->update($request->all(), $id);
 
         Flash::success('Berita updated successfully.');
-
         return redirect(route('beritas.index'));
     }
 
@@ -165,39 +160,5 @@ class BeritaController extends AppBaseController
         $this->beritaRepository->delete($id);
         Flash::success('Berita deleted successfully.');
         return redirect(route('beritas.index'));
-    }
-
-    public function penulis(Request $request) {
-        $search = $request->search;
-        if($search == ''){
-            $penulis = User::orderby('name','asc')->select('id','name')->limit(5)->get();
-        }else{
-            $penulis = User::orderby('name','asc')->select('id','name')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
-        }
-        $response = array();
-        foreach($penulis as $item){
-            $response[] = array(
-                "id"=>$item->id,
-                "text"=>$item->name
-            );
-        }
-        return response()->json($response);
-    }
-
-    public function kategori(Request $request) {
-        $search = $request->search;
-        if($search == ''){
-            $kategori = Kategori::orderby('kategori','asc')->select('id','kategori')->limit(5)->get();
-        }else{
-            $kategori = Kategori::orderby('kategori','asc')->select('id','kategori')->where('kategori', 'like', '%' .$search . '%')->limit(5)->get();
-        }
-        $response = array();
-        foreach($kategori as $item){
-            $response[] = array(
-                "id"=>$item->id,
-                "text"=>$item->kategori
-            );
-        }
-        return response()->json($response);
-    }
+    }    
 }

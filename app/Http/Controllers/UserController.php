@@ -6,10 +6,16 @@ use App\DataTables\UserDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Controllers\AppBaseController;
+use App\Models\ProgramStudi;
 use App\Repositories\UserRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\Hash;
 use Response;
+use Spatie\Permission\Models\Role;
+use Carbon\Carbon;
+use DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends AppBaseController
 {
@@ -40,7 +46,10 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $prodi = ProgramStudi::pluck('nama', 'id');
+        $sRoles= Role::orderBy('name')->get();
+        $roles=[];
+        return view('users.create', compact('prodi', 'sRoles', 'roles'));
     }
 
     /**
@@ -52,12 +61,36 @@ class UserController extends AppBaseController
      */
     public function store(CreateUserRequest $request)
     {
-        $input = $request->all();
-
-        $user = $this->userRepository->create($input);
+        $input = $request->except('photo');
+        $date= Carbon::now()->format('Y_m_d');
+        if($request->hasFile('photo')) {
+            $foto = $request->file('photo');
+            $filename = str_replace(" ", "_",$foto->getClientOriginalName());
+            $filenames = $date.'_'.$filename;
+            $path=$request->photo->storeAs('public/foto-profile', $filenames,'local');
+            $input['photo']= 'storage' . substr($path, strpos($path, '/'));
+        }
+        $roles=[];
+        if($request->has('s_role_id')){
+            $roles=$input['s_role_id'];
+        }
+        // return $input;
+        DB::transaction(function () use($input,$roles){
+            $user = $this->userRepository->create($input);
+            $user->syncRoles($roles);
+            $user->password = Hash::make($input['password']);
+            $user['tempat_lahir'] = $input['tempat_lahir'];
+            $user['tanggal_lahir'] = $input['tanggal_lahir'];
+            $user['agama'] = $input['agama'];
+            $user['alamat'] = $input['alamat'];
+            $user['telepon'] = $input['telepon'];
+            $user['jenis_kelamin'] = $input['jenis_kelamin'];
+            $user['photo'] = $input['photo'];
+            // $user->username = str_replace(" ", "_", $input['username']);
+            $user->save();
+        },3);
 
         Flash::success('User saved successfully.');
-
         return redirect(route('users.index'));
     }
 
@@ -71,13 +104,10 @@ class UserController extends AppBaseController
     public function show($id)
     {
         $user = $this->userRepository->find($id);
-
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('users.index'));
         }
-
         return view('users.show')->with('user', $user);
     }
 
@@ -90,15 +120,17 @@ class UserController extends AppBaseController
      */
     public function edit($id)
     {
+        $prodi = ProgramStudi::pluck('nama', 'id');
         $user = $this->userRepository->find($id);
 
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('users.index'));
         }
+        $sRoles=Role::orderBy('name')->get();
+        $roles=$user->roles->pluck('id')->toArray();
 
-        return view('users.edit')->with('user', $user);
+        return view('users.edit', compact('sRoles', 'roles'))->with('user', $user);
     }
 
     /**

@@ -18,7 +18,12 @@ class BeritaDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'beritas.datatables_actions');
+        return $dataTable
+        ->addColumn('action', 'beritas.datatables_actions')
+        ->editColumn('isi', function($query){
+            return ''.$query->isi.'';
+        })
+        ->rawColumns(['isi','action']);
     }
 
     /**
@@ -48,11 +53,11 @@ class BeritaDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-                    ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'create', 'className' => 'btn btn-primary btn-sm no-corner',],
+                    // ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'reload', 'className' => 'btn btn-success btn-sm no-corner', 'text'=>'<i class="fas fa-sync-alt"></i> ' . 'Refresh'],
                 ],
             ]);
     }
@@ -69,11 +74,10 @@ class BeritaDataTable extends DataTable
                 return 'function(data,type,fullData,meta){return meta.settings._iDisplayStart+meta.row+1;}';
             }],
             'users_id' => ['title' => 'Penulis', 'data' => 'users.name', 'name'=>'users.name'],
-            'kategori_id' => ['title' => 'Kategori', 'data' => 'kategori.kategori', 'name'=>'kategori.kategori'],
-            'program_studi_id' => ['title' => 'Program Studi', 'data' => 'prodi.nama', 'name'=>'prodi.nama'],
-            'banner',
             'judul',
-            'isi'
+            'isi',
+            'kategori_id' => ['title' => 'Kategori', 'data' => 'kategori.kategori', 'name'=>'kategori.kategori'],
+            'banner'
         ];
     }
 

@@ -231,6 +231,7 @@
                     <div class="tab_content">
                         <div class="tabs_item">
                             <div class="row">
+                                {{-- @foreach ($berita as $item) --}}
                                 <div class="col-lg-12">
                                     <div class="blog">
                                         <a href="">
@@ -238,56 +239,35 @@
                                                 <div class="col-lg-6 align-self-center">
                                                     <ul class="blog-list">
                                                         <li>
-                                                            <span>Teknik Industri</span>
+                                                            <span>{{ $berita['kategori']['kategori'] }}</span>
                                                         </li>
-                                                        <li>30 January 2021</li>
+                                                        <li>{{ $berita['created_at'] }}</li>
                                                     </ul>
-                                                    <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                                    <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse ultrices gravida.</p>
+                                                    <h2 class="mb-4">{{ $berita['judul'] }}</h2>
+                                                    <p class="blog-content">{!! $berita['isi'] !!}</p>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
+                                                    <img class="blog-img" src="{{ $berita['banner'] }}" alt="">
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
+                                {{-- @endforeach --}}
+                                @foreach ($beritas as $item)
                                 <div class="col-lg-4 mt-3">
                                     <div class="blog">
                                         <a href="">
-                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                                            <img src="{{ $item['banner'] }}" alt="">
                                             <ul class="blog-list mt-3">
-                                                <li><span>Teknik Industri</span></li>
-                                                <li>30 January 2021</li>
+                                                <li><span>{{ $item['kategori']['kategori'] }}</span></li>
+                                                <li>{{ $item['created_at'] }}</li>
                                             </ul>
-                                            <h3>Teknologi Semi Cair dan Padat</h3>
+                                            <h3>{{ $item['judul'] }}</h3>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="blog">
-                                        <a href="">
-                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                            <ul class="blog-list mt-3">
-                                                <li><span>Teknik Industri</span></li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h3>Teknologi Semi Cair dan Padat</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 mt-3">
-                                    <div class="blog">
-                                        <a href="">
-                                            <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                            <ul class="blog-list mt-3">
-                                                <li><span>Teknik Industri</span></li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h3>Teknologi Semi Cair dan Padat</h3>
-                                        </a>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="tabs_item">

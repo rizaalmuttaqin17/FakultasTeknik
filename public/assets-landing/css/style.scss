@@ -2166,9 +2166,25 @@ Software Section CSS
                 }
                 .blog-img-first{
                     width: 100%;
-                    max-height: 300px;
+                    max-height: 400px;
                     object-fit: cover;
                     background: #d8d8d8;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+}
+                .blog-img{
+                    width: 100%;
+                    max-height: 200px;
+                    object-fit: cover;
+                    background: #b8b8b8;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
                 }
                 p{
                     font-size: 14px;

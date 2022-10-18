@@ -31,7 +31,7 @@
 <!-- Tanggal Lahir Field -->
 <div class="form-group col-sm-2">
     {!! Form::label('tanggal_lahir', 'Tanggal Lahir') !!}
-    {!! Form::date('tanggal_lahir', null, ['class' => 'form-control','id'=>'tanggal_lahir']) !!}
+    {!! Form::date('tanggal_lahir', isset($user)&&!is_null($user->tanggal_lahir)?$user->tanggal_lahir->format('Y-m-d'):null, ['class' => 'form-control','id'=>'tanggal_lahir']) !!}
 </div>
 
 <!-- Telepon Field -->
@@ -55,7 +55,7 @@
 <!-- Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password') !!}<span class="text-danger">*</span>
-    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" placeholder="Set account password" name="password" tabindex="2" required>
+    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid': '' }}" placeholder="Set account password" name="password" tabindex="2">
 </div>
 <div class="form-group col-sm-6">
     {!! Form::label('password_confirmation', 'Konfirmasi Password') !!}<span class="text-danger">*</span>

@@ -17,7 +17,7 @@ Edit Pengguna
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body ">
-                            {!! Form::model($users, ['route' => ['users.update', $users->id], 'method' => 'patch',
+                            {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch',
                             'files' => 'true']) !!}
                             <div class="row">
                                 @include('users.fields')

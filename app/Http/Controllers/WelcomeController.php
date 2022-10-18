@@ -9,10 +9,8 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        // $prodi = ProgramStudi::pluck('nama', 'id');
         $berita = Berita::first();
-        $beritas = Berita::take(5)->get();
-        // return $beritas;
-        return view('welcome', compact('berita', 'beritas'));
+        $beritas = Berita::where('program_studi_id', '6')->orWhere('program_studi_id', '7')->orWhere('program_studi_id', '8')->orWhere('program_studi_id', '9')->orWhere('program_studi_id', '10')->take(4)->get();
+        return view('blog.welcome', compact('berita', 'beritas'));
     }
 }

@@ -144,17 +144,54 @@ class UserController extends AppBaseController
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->find($id);
-
         if (empty($user)) {
             Flash::error('User not found');
-
             return redirect(route('users.index'));
         }
+        $input = $request->except('photo');
+        $date= Carbon::now()->format('Y_m_d');
+        
+        if($request->hasFile('photo')) {
+            $foto = $request->file('photo');
+            $filename = str_replace(" ", "_",$foto->getClientOriginalName());
+            $filenames = $date.'_'.$filename;
+            $path=$request->photo->storeAs('public/profile', $filenames,'local');
+            $input['photo']= 'storage' . substr($path, strpos($path, '/'));
+        }
+        if($input['password']==='' || $input['password']===null){
+            unset($input['password']);
+        }
 
-        $user = $this->userRepository->update($request->all(), $id);
+        if($request['photo'] != '' || $request['photo'] != null){
+            $user['photo'] = $input['photo'];
+        } else {
+            unset($input['photo']);
+        }
 
+        $roles=[];
+        if($request->has('s_role_id')){
+            $roles=$input['s_role_id'];
+        }
+
+        DB::transaction(function () use($input,$roles,$id){
+            $user = $this->userRepository->update($input, $id);
+            $user->syncRoles($roles);
+            if(isset($input['password'])){
+                $user->password = bcrypt($input['password']);
+            }
+            $user['tempat_lahir'] = $input['tempat_lahir'];
+            $user['tanggal_lahir'] = $input['tanggal_lahir'];
+            $user['agama'] = $input['agama'];
+            $user['alamat'] = $input['alamat'];
+            $user['telepon'] = $input['telepon'];
+            $user['jenis_kelamin'] = $input['jenis_kelamin'];
+            // $user['id_prodi'] = $input['id_prodi'];
+            // $user['no_induk'] = $input['no_induk'];
+            $user->save();
+        },3);
+
+        // $user = $this->userRepository->update($request->all(), $id);
         Flash::success('User updated successfully.');
-
         return redirect(route('users.index'));
     }
 

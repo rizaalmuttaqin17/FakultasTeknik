@@ -5,6 +5,7 @@ namespace App\DataTables;
 use App\Models\User;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Carbon\Carbon;
 
 class UserDataTable extends DataTable
 {
@@ -18,7 +19,29 @@ class UserDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'users.datatables_actions');
+        return $dataTable
+        ->addColumn('action', 'users.datatables_actions')
+        ->editColumn('name', function($query){
+            return '<p>'.$query['name'].'</p><span>'.$query['telepon'].'</span>';
+        })
+        ->editColumn('photo', function($query){
+            return '<img src="'.$query->photo.'" width="50"/>';
+        })
+        ->editColumn('tempat_lahir', function($query){
+            if($query['tempat_lahir']==null){
+                return '-';
+            } else {
+                return '<p>'.$query['tempat_lahir'].', '.Carbon::parse($query['tanggal_lahir'])->locale('id')->isoFormat('DD MMMM Y').'</p>';
+            }
+        })
+        ->editColumn('jenis_kelamin', function($query){
+            if($query['jenis_kelamin']=='L'){
+                return 'Laki- Laki';
+            } else {
+                return 'Perempuan';
+            }
+        })
+        ->rawColumns(['photo','action', 'tempat_lahir', 'jenis_kelamin', 'name']);
     }
 
     /**
@@ -49,9 +72,9 @@ class UserDataTable extends DataTable
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
@@ -70,13 +93,11 @@ class UserDataTable extends DataTable
             }],
             'name',
             'email',
-            'photo',
             'agama',
             'jenis_kelamin',
             'tempat_lahir',
-            'tanggal_lahir',
-            'telepon',
-            'alamat'
+            'alamat',
+            'photo',
         ];
     }
 

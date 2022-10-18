@@ -1948,10 +1948,27 @@ Software Section CSS
 }
 .software-list-tab .tab_content .tabs_item .blog .blog-img-first {
   width: 100%;
-  max-height: 300px;
+  max-height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   background: #d8d8d8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.software-list-tab .tab_content .tabs_item .blog .blog-img {
+  width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #b8b8b8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .software-list-tab .tab_content .tabs_item .blog p {
   font-size: 14px;

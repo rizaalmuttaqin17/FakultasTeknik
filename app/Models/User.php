@@ -33,7 +33,14 @@ class User extends Authenticatable
     public $fillable = [
         'name',
         'email',
-        'password'
+        'password',
+        // 'photo',
+        'agama',
+        'jenis_kelamin',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'telepon',
+        'alamat'
     ];
 
     /**
@@ -44,7 +51,14 @@ class User extends Authenticatable
     protected $casts = [
         'name' => 'string',
         'email' => 'string',
-        'password' => 'string'
+        'password' => 'string',
+        // 'photo' => 'string',
+        'agama' => 'string',
+        'jenis_kelamin' => 'string',
+        'tempat_lahir' => 'string',
+        'tanggal_lahir' => 'date',
+        'telepon' => 'string',
+        'alamat' => 'string'
     ];
 
     /**
@@ -55,7 +69,7 @@ class User extends Authenticatable
     public static $rules = [
         'name' => 'required',
         'email' => 'required',
-        'password' => 'required'
+        // 'password' => 'required'
     ];
 
     

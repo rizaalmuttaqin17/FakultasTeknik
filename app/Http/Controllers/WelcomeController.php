@@ -11,8 +11,8 @@ class WelcomeController extends Controller
     {
         // $prodi = ProgramStudi::pluck('nama', 'id');
         $berita = Berita::first();
-        $beritas = Berita::take(3)->get();
-        // return $berita;
+        $beritas = Berita::take(5)->get();
+        // return $beritas;
         return view('welcome', compact('berita', 'beritas'));
     }
 }

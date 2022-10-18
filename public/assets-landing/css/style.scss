@@ -2164,6 +2164,12 @@ Software Section CSS
                     font-size: 1.5rem;
                     line-height: 1.25;
                 }
+                .blog-img-first{
+                    width: 100%;
+                    max-height: 300px;
+                    object-fit: cover;
+                    background: #d8d8d8;
+                }
                 p{
                     font-size: 14px;
                     overflow: hidden;

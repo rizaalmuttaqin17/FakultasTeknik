@@ -1946,6 +1946,13 @@ Software Section CSS
   font-size: 1.5rem;
   line-height: 1.25;
 }
+.software-list-tab .tab_content .tabs_item .blog .blog-img-first {
+  width: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #d8d8d8;
+}
 .software-list-tab .tab_content .tabs_item .blog p {
   font-size: 14px;
   overflow: hidden;

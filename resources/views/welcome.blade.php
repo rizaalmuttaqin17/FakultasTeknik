@@ -229,9 +229,13 @@
                         <li><a href="#">Lainnya</a></li>
                     </ul>
                     <div class="tab_content">
+                        
                         <div class="tabs_item">
+                            {{-- @if ($beritas->count()) --}}
                             <div class="row">
+                                @foreach ($beritas as $item)
                                 {{-- @foreach ($berita as $item) --}}
+                                @if ($loop->first)
                                 <div class="col-lg-12">
                                     <div class="blog">
                                         <a href="">
@@ -239,36 +243,38 @@
                                                 <div class="col-lg-6 align-self-center">
                                                     <ul class="blog-list">
                                                         <li>
-                                                            <span>{{ $berita['kategori']['kategori'] }}</span>
+                                                            <span>{{ $item['kategori']['kategori'] }}</span>
                                                         </li>
-                                                        <li>{{ $berita['created_at'] }}</li>
+                                                        <li>{{ \Carbon\Carbon::parse($item['created_at'])->locale('id')->isoFormat('DD MMMM Y') }}</li>
                                                     </ul>
-                                                    <h2 class="mb-4">{{ $berita['judul'] }}</h2>
-                                                    <p class="blog-content">{!! $berita['isi'] !!}</p>
+                                                    <h2 class="mb-4">{{ $item['judul'] }}</h2>
+                                                    <p class="blog-content">{!! $item['isi'] !!}</p>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <img class="blog-img" src="{{ $berita['banner'] }}" alt="">
+                                                    <img class="blog-img-first" src="{{ $item['banner'] }}" alt="">
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
+                                @elseif ($loop->index)
                                 {{-- @endforeach --}}
-                                @foreach ($beritas as $item)
                                 <div class="col-lg-4 mt-3">
                                     <div class="blog">
                                         <a href="">
                                             <img src="{{ $item['banner'] }}" alt="">
                                             <ul class="blog-list mt-3">
                                                 <li><span>{{ $item['kategori']['kategori'] }}</span></li>
-                                                <li>{{ $item['created_at'] }}</li>
+                                                <li>{{ \Carbon\Carbon::parse($item['created_at'])->locale('id')->isoFormat('DD MMMM Y') }}</li>
                                             </ul>
                                             <h3>{{ $item['judul'] }}</h3>
                                         </a>
                                     </div>
                                 </div>
+                                @endif
                                 @endforeach
                             </div>
+                            {{-- @endif --}}
                         </div>
                         <div class="tabs_item">
                             <div class="row">

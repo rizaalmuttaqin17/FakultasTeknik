@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/blog', function () {
-    return view('blog.detail-blog');
+    return view('blog.blog');
 });
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');

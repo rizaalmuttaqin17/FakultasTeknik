@@ -24,17 +24,14 @@ class User extends Authenticatable
     use HasFactory;
 
     public $table = 'users';
-    
 
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'name',
         'email',
         'password',
-        // 'photo',
+        'photo',
         'agama',
         'jenis_kelamin',
         'tempat_lahir',
@@ -52,7 +49,7 @@ class User extends Authenticatable
         'name' => 'string',
         'email' => 'string',
         'password' => 'string',
-        // 'photo' => 'string',
+        'photo' => 'string',
         'agama' => 'string',
         'jenis_kelamin' => 'string',
         'tempat_lahir' => 'string',
@@ -69,7 +66,7 @@ class User extends Authenticatable
     public static $rules = [
         'name' => 'required',
         'email' => 'required',
-        // 'password' => 'required'
+        'password' => 'required'
     ];
 
     

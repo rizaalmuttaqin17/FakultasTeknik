@@ -10,6 +10,7 @@ use App\Repositories\KategoriRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Illuminate\Support\Str;
 
 class KategoriController extends AppBaseController
 {
@@ -53,7 +54,7 @@ class KategoriController extends AppBaseController
     public function store(CreateKategoriRequest $request)
     {
         $input = $request->all();
-
+        $input['slug'] = Str::slug($request['kategori']);
         $kategori = $this->kategoriRepository->create($input);
 
         Flash::success('Kategori saved successfully.');
@@ -115,14 +116,12 @@ class KategoriController extends AppBaseController
 
         if (empty($kategori)) {
             Flash::error('Kategori not found');
-
             return redirect(route('kategoris.index'));
         }
-
+        $input['slug'] = Str::slug($request['kategori']);
         $kategori = $this->kategoriRepository->update($request->all(), $id);
 
         Flash::success('Kategori updated successfully.');
-
         return redirect(route('kategoris.index'));
     }
 

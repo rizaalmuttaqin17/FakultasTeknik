@@ -10,7 +10,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $berita = Berita::first();
-        $beritas = Berita::where('program_studi_id', '6')->orWhere('program_studi_id', '7')->orWhere('program_studi_id', '8')->orWhere('program_studi_id', '9')->orWhere('program_studi_id', '10')->take(4)->get();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
         return view('blog.welcome', compact('berita', 'beritas'));
     }
 

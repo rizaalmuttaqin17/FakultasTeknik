@@ -150,7 +150,6 @@ class UserController extends AppBaseController
         }
         $input = $request->except('photo');
         $date= Carbon::now()->format('Y_m_d');
-        
         if($request->hasFile('photo')) {
             $foto = $request->file('photo');
             $filename = str_replace(" ", "_",$foto->getClientOriginalName());

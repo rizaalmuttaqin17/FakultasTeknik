@@ -11,6 +11,12 @@
     {!! Form::select('kategori_id', $kategori, null, ['class' => 'kategori_id form-control', 'required', 'placeholder'=>'Pilih Kategori']) !!}
 </div>
 
+<!-- Tag Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('tags', 'Tags') !!}
+    {!! Form::select('tags[]', $tags, null, ['class' => 'tags form-control', 'multiple']) !!}
+</div>
+
 <!-- Banner Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('banner', 'Banner') !!}
@@ -36,6 +42,10 @@
         $(document).ready(function(){
             $(".kategori_id").select2({
                 placeholder: "Pilih Kategori...",
+                tags: true,
+            });
+            $(".tags").select2({
+                placeholder: "Pilih Tags...",
                 tags: true,
             });
         });

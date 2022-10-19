@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/blog', function () {
-    return view('blog.blog');
-});
+// Route::get('/blog', function () {
+//     return view('blog.blog');
+// });
+Auth::routes();
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
-
-Auth::routes();
+Route::get('/blog/{slug}', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -30,3 +30,7 @@ Route::resource('roles', App\Http\Controllers\RolesController::class);
 Route::resource('permissions', App\Http\Controllers\PermissionsController::class);
 Route::resource('kategoris', App\Http\Controllers\KategoriController::class);
 Route::resource('users', App\Http\Controllers\UserController::class);
+
+Route::resource('tags', App\Http\Controllers\TagController::class);
+
+Route::resource('beritaTags', App\Http\Controllers\BeritaTagsController::class);

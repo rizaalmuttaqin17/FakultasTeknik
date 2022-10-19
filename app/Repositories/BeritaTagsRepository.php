@@ -2,28 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\Berita;
+use App\Models\BeritaTags;
 use App\Repositories\BaseRepository;
 
 /**
- * Class BeritaRepository
+ * Class BeritaTagsRepository
  * @package App\Repositories
- * @version September 2, 2022, 9:42 am UTC
+ * @version October 19, 2022, 6:55 am UTC
 */
 
-class BeritaRepository extends BaseRepository
+class BeritaTagsRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'users_id',
-        'kategori_id',
-        'program_studi_id',
-        'banner',
-        'slug',
-        'judul',
-        'isi'
+        'berita_id',
+        'tag_id'
     ];
 
     /**
@@ -41,6 +36,6 @@ class BeritaRepository extends BaseRepository
      **/
     public function model()
     {
-        return Berita::class;
+        return BeritaTags::class;
     }
 }

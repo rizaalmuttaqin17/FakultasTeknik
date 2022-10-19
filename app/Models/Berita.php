@@ -43,6 +43,7 @@ class Berita extends Model
         'program_studi_id',
         'banner',
         'judul',
+        'slug',
         'isi'
     ];
 
@@ -56,8 +57,9 @@ class Berita extends Model
         'users_id' => 'integer',
         'kategori_id' => 'integer',
         'program_studi_id' => 'integer',
-        // 'banner' => 'string',
+        'banner' => 'string',
         'judul' => 'string',
+        'slug' => 'string',
         'isi' => 'string'
     ];
 
@@ -70,8 +72,9 @@ class Berita extends Model
         'users_id' => 'nullable',
         'kategori_id' => 'nullable',
         'program_studi_id' => 'nullable',
-        // 'banner' => 'nullable|string|max:150',
+        'banner' => 'nullable',
         'judul' => 'nullable|string|max:254',
+        'slug' => 'nullable|string',
         'isi' => 'nullable|string',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
@@ -100,5 +103,10 @@ class Berita extends Model
     public function users()
     {
         return $this->belongsTo(\App\Models\User::class, 'users_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(\App\Models\Tag::class);
     }
 }

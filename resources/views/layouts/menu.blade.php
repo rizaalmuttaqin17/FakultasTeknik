@@ -35,3 +35,11 @@
     </ul>
 </li>
 
+<li class="side-menus {{ Request::is('tags*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('tags.index') }}"><i class="fas fa-building"></i><span>Tags</span></a>
+</li>
+
+<li class="side-menus {{ Request::is('beritaTags*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('beritaTags.index') }}"><i class="fas fa-building"></i><span>Berita Tags</span></a>
+</li>
+

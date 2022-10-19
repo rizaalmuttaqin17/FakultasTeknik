@@ -11,12 +11,14 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Kategori;
 use App\Models\ProgramStudi;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Response;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BeritaController extends AppBaseController
 {
@@ -48,7 +50,8 @@ class BeritaController extends AppBaseController
     public function create()
     {
         $kategori = Kategori::pluck('kategori', 'id');
-        return view('beritas.create', compact('kategori'));
+        $tags = Tag::pluck('nama', 'id');
+        return view('beritas.create', compact('kategori', 'tags'));
     }
 
     /**
@@ -78,8 +81,33 @@ class BeritaController extends AppBaseController
             $kategoris = Kategori::orderBy('id', 'desc')->first();
             $input['kategori_id'] = $kategoris['id'];
         }
+        if(Auth::user()->hasRole('Admin-Teknik Arsitektur')){
+            $input['program_studi_id'] = 6;
+        } else if(Auth::user()->hasRole('Admin-Desain Interior')){
+            $input['program_studi_id'] = 7;
+        } else if(Auth::user()->hasRole('Admin-Teknik Industri')){
+            $input['program_studi_id'] = 8;
+        } else if(Auth::user()->hasRole('Admin-Teknik Informatika')){
+            $input['program_studi_id'] = 9;
+        } else if(Auth::user()->hasRole('Admin-Teknologi Industri Pertanian')){
+            $input['program_studi_id'] = 10;
+        } else if(Auth::user()->hasRole('Admin-Akuntansi')){
+            $input['program_studi_id'] = 1;
+        } else if(Auth::user()->hasRole('Admin-Farmasi')){
+            $input['program_studi_id'] = 2;
+        } else if(Auth::user()->hasRole('Admin-Hubungan Internasional')){
+            $input['program_studi_id'] = 3;
+        } else if(Auth::user()->hasRole('Admin-Ilmu Komunikasi')){
+            $input['program_studi_id'] = 4;
+        } else if(Auth::user()->hasRole('Admin-PAUD')){
+            $input['program_studi_id'] = 5;
+        } else {
+            $input['program_studi_id'] = null;
+        }
         $input['users_id'] = Auth::id();
+        $input['slug'] = Str::slug($input['judul']);
         $berita = $this->beritaRepository->create($input);
+        $berita->tags()->attach($request['tags']);
 
         Flash::success('Berita saved successfully.');
         return redirect(route('beritas.index'));
@@ -113,11 +141,13 @@ class BeritaController extends AppBaseController
     {
         $berita = $this->beritaRepository->find($id);
         $kategori = Kategori::pluck('kategori', 'id');
+        $tags = Tag::pluck('nama', 'id');
         if (empty($berita)) {
             Flash::error('Berita not found');
             return redirect(route('beritas.index'));
         }
-        return view('beritas.edit', compact('kategori'))->with('berita', $berita);
+
+        return view('beritas.edit', compact('kategori', 'tags'))->with('berita', $berita);
     }
 
     /**
@@ -135,7 +165,74 @@ class BeritaController extends AppBaseController
             Flash::error('Berita not found');
             return redirect(route('beritas.index'));
         }
-        $berita = $this->beritaRepository->update($request->all(), $id);
+        $input = $request->except('banner');
+        if(Auth::user()->hasRole('Admin-Teknik Arsitektur')){
+            $input['program_studi_id'] = 6;
+        } else if(Auth::user()->hasRole('Admin-Desain Interior')){
+            $input['program_studi_id'] = 7;
+        } else if(Auth::user()->hasRole('Admin-Teknik Industri')){
+            $input['program_studi_id'] = 8;
+        } else if(Auth::user()->hasRole('Admin-Teknik Informatika')){
+            $input['program_studi_id'] = 9;
+        } else if(Auth::user()->hasRole('Admin-Teknologi Industri Pertanian')){
+            $input['program_studi_id'] = 10;
+        } else if(Auth::user()->hasRole('Admin-Akuntansi')){
+            $input['program_studi_id'] = 1;
+        } else if(Auth::user()->hasRole('Admin-Farmasi')){
+            $input['program_studi_id'] = 2;
+        } else if(Auth::user()->hasRole('Admin-Hubungan Internasional')){
+            $input['program_studi_id'] = 3;
+        } else if(Auth::user()->hasRole('Admin-Ilmu Komunikasi')){
+            $input['program_studi_id'] = 4;
+        } else if(Auth::user()->hasRole('Admin-PAUD')){
+            $input['program_studi_id'] = 5;
+        } else {
+            $input['program_studi_id'] = null;
+        }
+        $input['slug'] = Str::slug($input['judul']);
+
+        if(is_numeric($input['kategori_id'])==true){
+            $request['kategori_id'] = $input['kategori_id'];
+        } else {
+            $kategori = new Kategori;
+            $kategori['kategori'] = $input['kategori_id'];
+            $kategori->save();
+            $kategoris = Kategori::orderBy('id', 'desc')->first();
+            $input['kategori_id'] = $kategoris['id'];
+        }
+
+        $date= Carbon::now()->format('Y_m_d');
+        if($request->hasFile('banner')) {
+            $banner = $request->file('banner');
+            $filename = str_replace(" ", "_",$banner->getClientOriginalName());
+            $filenames = $date.'_'.$filename;
+            $path=$request->banner->storeAs('public/banner', $filenames,'local');
+            $input['banner']= 'storage' . substr($path, strpos($path, '/'));
+
+            DB::transaction(function () use($input, $id){
+                $berita = $this->beritaRepository->update($input, $id);
+                $berita['kategori_id'] = $input['kategori_id'];
+                $berita['banner'] = $input['banner'];
+                $berita['judul'] = $input['judul'];
+                $berita['isi'] = $input['isi'];
+                $berita['slug'] = Str::slug($input['judul']);
+                $berita['users_id'] = Auth::id();
+                $berita->save();
+            },3);
+        } else {
+            DB::transaction(function () use($input, $id){
+                $berita = $this->beritaRepository->update($input, $id);
+                $berita['kategori_id'] = $input['kategori_id'];
+                unset($berita['banner']);
+                $berita['judul'] = $input['judul'];
+                $berita['isi'] = $input['isi'];
+                $berita['slug'] = Str::slug($input['judul']);
+                $berita['users_id'] = Auth::id();
+                $berita->save();
+            },3);
+        }
+
+        $berita->tags()->sync($request['tags']);
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));

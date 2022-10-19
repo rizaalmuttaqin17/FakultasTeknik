@@ -7,20 +7,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Kategori
+ * Class BeritaTags
  * @package App\Models
- * @version September 2, 2022, 9:43 am UTC
+ * @version October 19, 2022, 6:55 am UTC
  *
- * @property \Illuminate\Database\Eloquent\Collection $berita
- * @property string $kategori
+ * @property integer $berita_id
+ * @property integer $tags_id
  */
-class Kategori extends Model
+class BeritaTags extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
-    public $table = 'kategori';
+    public $table = 'berita_tag';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -31,8 +31,8 @@ class Kategori extends Model
 
 
     public $fillable = [
-        'kategori',
-        'slug'
+        'berita_id',
+        'tag_id'
     ];
 
     /**
@@ -42,8 +42,8 @@ class Kategori extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'kategori' => 'string',
-        'slug' => 'string'
+        'berita_id' => 'integer',
+        'tag_id' => 'integer'
     ];
 
     /**
@@ -52,18 +52,12 @@ class Kategori extends Model
      * @var array
      */
     public static $rules = [
-        'kategori' => 'required|string|max:145',
-        'slug' => 'nullable|string',
+        'berita_id' => 'nullable',
+        'tag_id' => 'nullable',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
         'deleted_at' => 'nullable'
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function berita()
-    {
-        return $this->hasMany(\App\Models\Berita::class, 'kategori_id');
-    }
+    
 }

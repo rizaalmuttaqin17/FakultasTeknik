@@ -20,10 +20,14 @@ class BeritaDataTable extends DataTable
 
         return $dataTable
         ->addColumn('action', 'beritas.datatables_actions')
+        ->editColumn('banner', function($query){
+            return '<img src="'.$query->banner.'" width="100"/>';
+        })
         ->editColumn('isi', function($query){
             return ''.$query->isi.'';
         })
-        ->rawColumns(['isi','action']);
+        ->addColumn('kategori_id', 'beritas.tags')
+        ->rawColumns(['isi','action', 'banner', 'kategori_id']);
     }
 
     /**
@@ -34,7 +38,7 @@ class BeritaDataTable extends DataTable
      */
     public function query(Berita $model)
     {
-        return $model->newQuery()->with('kategori', 'prodi', 'users');
+        return $model->newQuery()->with('kategori', 'prodi', 'users', 'tags');
     }
 
     /**
@@ -76,7 +80,7 @@ class BeritaDataTable extends DataTable
             'users_id' => ['title' => 'Penulis', 'data' => 'users.name', 'name'=>'users.name'],
             'judul',
             'isi',
-            'kategori_id' => ['title' => 'Kategori', 'data' => 'kategori.kategori', 'name'=>'kategori.kategori'],
+            'kategori_id' => ['title' => 'Kategori'],
             'banner'
         ];
     }

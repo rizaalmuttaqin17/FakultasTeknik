@@ -15,10 +15,11 @@ class WelcomeController extends Controller
         return view('blog.welcome', compact('berita', 'beritas'));
     }
 
-    public function blog()
+    public function blog($slug)
     {
-        $berita = Berita::all();
-        return view('blog.blog', compact('berita'));
+        $berita = Berita::where('slug', $slug)->first();
+        // return $berita;
+        return view('blog.blog-detail', compact('berita'));
     }
 
     public function detail($id)

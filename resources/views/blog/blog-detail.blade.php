@@ -1,6 +1,6 @@
 @extends('blog.app')
 @section('title')
-Berita Fakultas Teknik
+    Detail Berita Fakultas Teknik
 @endsection
 @section('content')
 <!-- Start Page Title Area -->
@@ -8,14 +8,17 @@ Berita Fakultas Teknik
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
-                <div class="page-title-content">
-                    <h2>Detail Berita</h2>
-                    <ul>
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>Detail Berita</li>
-                    </ul>
+                <div class="page-title-content row">
+                    <div class="col-lg-6 col-md-6 align-self-center">
+                        <div class="project-details-image">
+                            <h2>{{ $berita['judul'] }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="project-details-image">
+                            <img src="{{ url($berita['banner']) }}" alt="projects">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,19 +27,9 @@ Berita Fakultas Teknik
 <!-- End Page Title Area -->
 
 <!-- Start Project Details Area -->
-<section class="project-details-area ptb-100">
+<section class="project-details-area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="project-details-image">
-                    <img src="{{ asset('assets-landing/img/services-details/1.jpg') }}" alt="projects">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="project-details-image">
-                    <img src="{{ asset('assets-landing/img/services-details/2.jpg') }}" alt="projects">
-                </div>
-            </div>
             <div class="col-lg-12 col-md-12">
                 <div class="projects-details-desc">
                     <h3>Competitor Analysis</h3>

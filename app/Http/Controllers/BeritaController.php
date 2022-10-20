@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateBeritaRequest;
 use App\Repositories\BeritaRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\BeritaTags;
 use App\Models\Kategori;
 use App\Models\ProgramStudi;
 use App\Models\Tag;
@@ -231,8 +232,31 @@ class BeritaController extends AppBaseController
                 $berita->save();
             },3);
         }
-
-        $berita->tags()->sync($request['tags']);
+        if(is_numeric($request['tags'])!=null){
+            $berita->tags()->sync($request['tags']);
+        } else {
+            for($i = 0; $i < COUNT($request->tags); $i++){
+                $tag = Tag::all()->first();
+                if($tag->nama == $request->tags[$i]){
+                    $tags = Tag::where('nama', $request->tags)->first();
+                    $tags->nama = $request->tags[$i];
+                    $tags['slug'] = Str::slug($request->tags[$i]);
+                    // return $idTag;
+                    $tags->update();
+                } else {
+                    $tags = new Tag;
+                    $tags->nama = $request->tags[$i];
+                    $tags['slug'] = Str::slug($request->tags[$i]);
+                    // return $idTag;
+                    $tags->save();
+                }
+                $idTag = Tag::where('nama', $request->tags)->orderBy('id', 'DESC')->get()->first()->id;
+                $tagsBerita = new BeritaTags;
+                $tagsBerita->tag_id = $tags['id'];
+                $tagsBerita->berita_id = $id;
+                $tagsBerita->save();
+            }
+        }
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));

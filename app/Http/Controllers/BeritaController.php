@@ -82,6 +82,7 @@ class BeritaController extends AppBaseController
             $kategoris = Kategori::orderBy('id', 'desc')->first();
             $input['kategori_id'] = $kategoris['id'];
         }
+
         if(Auth::user()->hasRole('Admin-Teknik Arsitektur')){
             $input['program_studi_id'] = 6;
         } else if(Auth::user()->hasRole('Admin-Desain Interior')){
@@ -232,31 +233,41 @@ class BeritaController extends AppBaseController
                 $berita->save();
             },3);
         }
-        if(is_numeric($request['tags'])!=null){
-            $berita->tags()->sync($request['tags']);
-        } else {
-            for($i = 0; $i < COUNT($request->tags); $i++){
-                $tag = Tag::all()->first();
-                if($tag->nama == $request->tags[$i]){
-                    $tags = Tag::where('nama', $request->tags)->first();
-                    $tags->nama = $request->tags[$i];
-                    $tags['slug'] = Str::slug($request->tags[$i]);
-                    // return $idTag;
-                    $tags->update();
-                } else {
-                    $tags = new Tag;
-                    $tags->nama = $request->tags[$i];
-                    $tags['slug'] = Str::slug($request->tags[$i]);
-                    // return $idTag;
-                    $tags->save();
-                }
-                $idTag = Tag::where('nama', $request->tags)->orderBy('id', 'DESC')->get()->first()->id;
-                $tagsBerita = new BeritaTags;
-                $tagsBerita->tag_id = $tags['id'];
-                $tagsBerita->berita_id = $id;
-                $tagsBerita->save();
-            }
+        $tagsNames = $request->get('tags');
+
+        // Create all tags (unassociet)
+        foreach($tagsNames as $tagName){
+            Tag::firstOrCreate(['nama' => $tagName, 'slug' => Str::slug($tagName)])->save();
         }
+        // Once all tags are created we can query them
+        $tags = Tag::whereIn('nama', $tagsNames)->get()->pluck('id')->get();
+        $berita->tags()->sync($tags);
+        /* $attachableTags = [];
+        for($i=0; $i < COUNT($request['tags']); $i++){
+            $tagId = Tag::where('id', $request['tags'][$i])->first();
+            $tagName = Tag::where('nama', $request['tags'][$i])->first();
+            // return $tagId[$i]['id'];
+            if(is_numeric($request['tags'][$i])){
+                foreach ($tagId as $tag) {
+                    $attachableTags[] = Tag::firstOrCreate([
+                        'nama' => $tag['nama'],
+                        'slug' => Str::slug($tag['nama'])
+                    ])->id;
+                }
+                $berita->tags()->sync($attachableTags);
+            } else if(is_string($request['tags'][$i])){
+                foreach ($tagName as $tag) {
+                    $attachableTags[] = Tag::firstOrCreate([
+                        'nama' => $tag['nama'],
+                        'slug' => Str::slug($tag['nama'])
+                    ])->id;
+                }
+                $berita->tags()->sync($attachableTags);
+            } else {
+                $berita->tags()->sync($request['tags']);
+            } */
+            // $berita->tags()->sync($attachableTags);
+        // }
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));

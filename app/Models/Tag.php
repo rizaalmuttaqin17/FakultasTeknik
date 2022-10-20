@@ -53,7 +53,7 @@ class Tag extends Model
      */
     public static $rules = [
         'nama' => 'required|string|max:25',
-        'slug' => 'string|max:25',
+        'slug' => 'required|string|max:25',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
         'deleted_at' => 'nullable'
@@ -61,6 +61,6 @@ class Tag extends Model
 
     public function berita()
     {
-        return $this->belongsToMany(\App\Models\Berita::class);
+        return $this->belongsToMany(\App\Models\Berita::class)->withPivot('nama', 'slug')->withTimestamps();
     }
 }

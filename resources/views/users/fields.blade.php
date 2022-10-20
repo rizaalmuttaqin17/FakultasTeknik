@@ -68,7 +68,7 @@
         <div class=" skin skin-flat">
             @foreach($sRoles as $item)
                 <fieldset>
-                    {!! Form::checkbox('s_role_id[]', $item->id, in_array($item->id, $roles)?true:false,['id'=>'input-'.$item->id]) !!}
+                    {!! Form::radio('s_role_id[]', $item->id, in_array($item->id, $roles)?true:false,['id'=>'input-'.$item->id]) !!}
                     <label for="input-{{$item->id}}" class="ml-1">{!! $item->name !!}</label>
                 </fieldset>
             @endforeach

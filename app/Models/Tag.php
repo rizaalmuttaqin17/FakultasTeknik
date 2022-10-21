@@ -61,6 +61,6 @@ class Tag extends Model
 
     public function berita()
     {
-        return $this->belongsToMany(\App\Models\Berita::class)->withPivot('nama', 'slug')->withTimestamps();
+        return $this->belongsToMany(\App\Models\Berita::class)->withTimestamps();
     }
 }

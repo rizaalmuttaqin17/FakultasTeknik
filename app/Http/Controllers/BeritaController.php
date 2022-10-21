@@ -233,41 +233,32 @@ class BeritaController extends AppBaseController
                 $berita->save();
             },3);
         }
-        $tagsNames = $request->get('tags');
-
-        // Create all tags (unassociet)
-        foreach($tagsNames as $tagName){
-            Tag::firstOrCreate(['nama' => $tagName, 'slug' => Str::slug($tagName)])->save();
-        }
-        // Once all tags are created we can query them
-        $tags = Tag::whereIn('nama', $tagsNames)->get()->pluck('id')->get();
-        $berita->tags()->sync($tags);
-        /* $attachableTags = [];
-        for($i=0; $i < COUNT($request['tags']); $i++){
-            $tagId = Tag::where('id', $request['tags'][$i])->first();
-            $tagName = Tag::where('nama', $request['tags'][$i])->first();
-            // return $tagId[$i]['id'];
-            if(is_numeric($request['tags'][$i])){
-                foreach ($tagId as $tag) {
-                    $attachableTags[] = Tag::firstOrCreate([
-                        'nama' => $tag['nama'],
-                        'slug' => Str::slug($tag['nama'])
-                    ])->id;
+        $tagged = [];
+        for($i=0; $i<COUNT($request['tags']); $i++){
+            $tagged = Tag::select('id')->where('id', $request['tags'][$i])->first();
+            if(is_numeric($request['tags'][$i])==true){
+                $beritaTag = BeritaTags::where('berita_id', $id)->first();
+                if($beritaTag != null){
+                    if(is_numeric($request['tags'][$i])==true){
+                        $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
+                    } else {
+                        $tagged = Tag::updateOrCreate([
+                            'nama' => $request['tags'][$i],
+                            'slug' => Str::slug($request['tags'][$i])
+                        ])->id;
+                        $berita->tags()->syncWithoutDetaching($tagged);
+                    }
+                } else {
+                    $berita->tags()->sync($tagged);
                 }
-                $berita->tags()->sync($attachableTags);
-            } else if(is_string($request['tags'][$i])){
-                foreach ($tagName as $tag) {
-                    $attachableTags[] = Tag::firstOrCreate([
-                        'nama' => $tag['nama'],
-                        'slug' => Str::slug($tag['nama'])
-                    ])->id;
-                }
-                $berita->tags()->sync($attachableTags);
             } else {
-                $berita->tags()->sync($request['tags']);
-            } */
-            // $berita->tags()->sync($attachableTags);
-        // }
+                $tagged = Tag::updateOrCreate([
+                    'nama' => $request['tags'][$i],
+                    'slug' => Str::slug($request['tags'][$i])
+                ])->id;
+                $berita->tags()->syncWithoutDetaching($tagged);
+            }
+        }
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));

@@ -107,6 +107,6 @@ class Berita extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(\App\Models\Tag::class);
+        return $this->belongsToMany(\App\Models\Tag::class)->withTimestamps();
     }
 }

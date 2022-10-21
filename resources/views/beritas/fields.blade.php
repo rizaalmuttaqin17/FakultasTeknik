@@ -14,7 +14,7 @@
 <!-- Tag Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tags', 'Tags') !!}
-    {!! Form::select('tags[]', $tags, null, ['class' => 'tags form-control', 'multiple']) !!}
+    {!! Form::select('tags[]', $tags, null, ['class' => 'tags form-control', 'multiple', 'required']) !!}
 </div>
 
 <!-- Banner Field -->

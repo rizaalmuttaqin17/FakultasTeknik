@@ -236,7 +236,16 @@ class BeritaController extends AppBaseController
         $tagged = [];
         for($i=0; $i<COUNT($request['tags']); $i++){
             $tagged = Tag::select('id')->where('id', $request['tags'][$i])->first();
-            if(is_numeric($request['tags'][$i])==true){
+            if($tagged == null){
+                $tagged = Tag::updateOrCreate([
+                    'nama' => $request['tags'][$i],
+                    'slug' => Str::slug($request['tags'][$i])
+                ])->id;
+                $berita->tags()->syncWithoutDetaching($tagged);
+            } else {
+                $berita->tags()->sync($tagged);
+            }
+            /* if(is_numeric($request['tags'][$i])==true){
                 $beritaTag = BeritaTags::where('berita_id', $id)->first();
                 if($beritaTag != null){
                     if(is_numeric($request['tags'][$i])==true){
@@ -257,7 +266,7 @@ class BeritaController extends AppBaseController
                     'slug' => Str::slug($request['tags'][$i])
                 ])->id;
                 $berita->tags()->syncWithoutDetaching($tagged);
-            }
+            } */
         }
 
         Flash::success('Berita updated successfully.');

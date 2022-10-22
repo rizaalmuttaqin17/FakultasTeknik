@@ -9,15 +9,14 @@ use App\Http\Requests\UpdateBeritaRequest;
 use App\Repositories\BeritaRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
-use App\Models\BeritaTags;
+use App\Http\Requests\CreateTagRequest;
 use App\Models\Kategori;
-use App\Models\ProgramStudi;
 use App\Models\Tag;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Response;
 use Carbon\Carbon;
 use DB;
+use DOMDocument;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -204,38 +203,60 @@ class BeritaController extends AppBaseController
         }
 
         $date= Carbon::now()->format('Y_m_d');
+        $content = $request['isi'];
+        $dom = new \DomDocument();
+        @$dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $images = $dom->getElementsByTagName('img');
+        foreach ($images as $image) {
+            $imageSrc = $image->getAttribute('src');
+            if (preg_match('/data:image/', $imageSrc)) {
+                preg_match('/data:image\/(?<mime>.*?)\;/', $imageSrc, $mime);
+                $mimeType = $mime['mime'];
+                $filename = uniqid();
+                $filePath = "/uploads/$filename.$mimeType";
+                Image::make($imageSrc)
+                    ->encode($mimeType, 100)
+                    ->save(public_path($filePath));
+                $newImageSrc = asset($filePath);
+                $image->removeAttribute('src');
+                $image->setAttribute('src', $newImageSrc);
+            }
+        }
+        $content = $dom->saveHTML();
         if($request->hasFile('banner')) {
             $banner = $request->file('banner');
             $filename = str_replace(" ", "_",$banner->getClientOriginalName());
             $filenames = $date.'_'.$filename;
             $path=$request->banner->storeAs('public/banner', $filenames,'local');
             $input['banner']= 'storage' . substr($path, strpos($path, '/'));
-
-            DB::transaction(function () use($input, $id){
+            
+            DB::transaction(function () use($input, $id, $content){
                 $berita = $this->beritaRepository->update($input, $id);
                 $berita['kategori_id'] = $input['kategori_id'];
                 $berita['banner'] = $input['banner'];
                 $berita['judul'] = $input['judul'];
-                $berita['isi'] = $input['isi'];
+                $berita['isi'] = $content;
                 $berita['slug'] = Str::slug($input['judul']);
                 $berita['users_id'] = Auth::id();
                 $berita->save();
             },3);
-        } else {
-            DB::transaction(function () use($input, $id){
+        } else {            
+            DB::transaction(function () use($input, $id, $content){
                 $berita = $this->beritaRepository->update($input, $id);
                 $berita['kategori_id'] = $input['kategori_id'];
                 unset($berita['banner']);
                 $berita['judul'] = $input['judul'];
-                $berita['isi'] = $input['isi'];
+                $berita['isi'] = $content;
                 $berita['slug'] = Str::slug($input['judul']);
                 $berita['users_id'] = Auth::id();
                 $berita->save();
             },3);
         }
-        $tagged = [];  
-        for($i=0; $i<COUNT($request['tags']); $i++){
+        $berita->tags()->sync($request['tags']);
+        /* for($i=0; $i<COUNT($request['tags']); $i++){
+            $tagged = [];
             $tagged = Tag::select('id')->where('id', $request['tags'][$i])->first();
+            $TagBerita = BeritaTags::select('id')->where('berita_id', $id)->get();
             $beritaTag = BeritaTags::select('id')->where(['berita_id' => $id], ['tag_id' => $request->tags])->get();
             // return $beritaTag[$i];
             if($tagged == null){
@@ -246,14 +267,14 @@ class BeritaController extends AppBaseController
                 // return $tagged;
                 $berita->tags()->syncWithoutDetaching($tags);
             } else {
-                if($beritaTag != $request['tags']){
-                    $berita->tags()->detach($request['tags'][$i]);
-                } else {
+                if($TagBerita != $beritaTag){
                     $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
+                } else {
+                    $berita->tags()->sync($request['tags']);
                 }
-                $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
+                // $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
             }
-        }
+        } */
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));
@@ -278,5 +299,22 @@ class BeritaController extends AppBaseController
         $this->beritaRepository->delete($id);
         Flash::success('Berita deleted successfully.');
         return redirect(route('beritas.index'));
-    }    
+    }
+
+    public function storeTags($id, UpdateBeritaRequest $request)
+    {
+        $berita = $this->beritaRepository->find($id);
+
+        $tagged = [];
+        for($i=0; $i<COUNT($request['tags']); $i++){
+            $tags = Tag::updateOrCreate([
+                'nama' => $request['tags'][$i],
+                'slug' => Str::slug($request['tags'][$i])
+            ])->id;
+             // return $tagged;
+            $berita->tags()->syncWithoutDetaching($tags);
+        }
+        Flash::success('Rak saved successfully.');
+        return redirect()->back();
+    }
 }

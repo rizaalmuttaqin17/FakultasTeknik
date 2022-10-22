@@ -14,6 +14,7 @@
 <!-- Tag Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tags', 'Tags') !!}
+    <button type="button" class="btn btn-info btn-sm" data-target="#addTags" data-toggle="modal"><i class="fa fa-plus"></i>Tambah Tag</button>
     {!! Form::select('tags[]', $tags, null, ['class' => 'tags form-control', 'multiple', 'required']) !!}
 </div>
 
@@ -24,9 +25,9 @@
 </div>
 
 <!-- Isi Field -->
-<div class="form-group col-sm-12 col-lg-12">
+<div class="form-group col-sm-12 col-lg-12 mb-3">
     {!! Form::label('isi', 'Isi:') !!}
-    {!! Form::textarea('isi', null, ['class' => 'form-control', 'id'=>'berita']) !!}
+    {!! Form::textarea('isi', null, ['class' => 'form-control', 'id'=>'berita', 'rows'=> '0', 'cols'=> '30']) !!}
 </div>
 
 <!-- Submit Field -->
@@ -46,6 +47,9 @@
             });
             $(".tags").select2({
                 placeholder: "Pilih Tags...",
+            });
+            $(".tags_new").select2({
+                placeholder: "Tambah Tags...",
                 tags: true,
             });
         });

@@ -17,13 +17,18 @@ use Illuminate\Support\Facades\Route;
 //     return view('blog.blog');
 // });
 Auth::routes();
-
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::get('/blog/{slug}', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('beritas', App\Http\Controllers\BeritaController::class);
+Route::post('beritas/simpan-tags/{id}', [App\Http\Controllers\BeritaController::class, 'storeTags'])->name('beritas.simpan-tags');
+Route::post('upload_image', [App\Http\Controllers\BeritaController::class, 'uploadImage'])->name('upload');
+
 Route::resource('fakultas', App\Http\Controllers\FakultasController::class);
 Route::resource('programStudis', App\Http\Controllers\ProgramStudiController::class);
 Route::resource('roles', App\Http\Controllers\RolesController::class);

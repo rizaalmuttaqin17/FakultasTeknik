@@ -43,3 +43,7 @@
     <a class="nav-link" href="{{ route('beritaTags.index') }}"><i class="fas fa-building"></i><span>Berita Tags</span></a>
 </li>
 
+<li class="side-menus {{ Request::is('galleries*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('galleries.index') }}"><i class="fas fa-building"></i><span>Galleries</span></a>
+</li>
+

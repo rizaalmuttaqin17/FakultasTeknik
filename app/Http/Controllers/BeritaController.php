@@ -10,6 +10,7 @@ use App\Repositories\BeritaRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateTagRequest;
+use App\Models\BeritaTags;
 use App\Models\Kategori;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -252,29 +253,20 @@ class BeritaController extends AppBaseController
                 $berita->save();
             },3);
         }
-        $berita->tags()->sync($request['tags']);
-        /* for($i=0; $i<COUNT($request['tags']); $i++){
-            $tagged = [];
+        $berita->tags()->detach();
+        $tagged = [];
+        for($i=0; $i<COUNT($request['tags']); $i++){
             $tagged = Tag::select('id')->where('id', $request['tags'][$i])->first();
-            $TagBerita = BeritaTags::select('id')->where('berita_id', $id)->get();
-            $beritaTag = BeritaTags::select('id')->where(['berita_id' => $id], ['tag_id' => $request->tags])->get();
-            // return $beritaTag[$i];
             if($tagged == null){
                 $tags = Tag::updateOrCreate([
                     'nama' => $request['tags'][$i],
                     'slug' => Str::slug($request['tags'][$i])
                 ])->id;
-                // return $tagged;
                 $berita->tags()->syncWithoutDetaching($tags);
             } else {
-                if($TagBerita != $beritaTag){
-                    $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
-                } else {
-                    $berita->tags()->sync($request['tags']);
-                }
-                // $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
+                $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
             }
-        } */
+        }
 
         Flash::success('Berita updated successfully.');
         return redirect(route('beritas.index'));

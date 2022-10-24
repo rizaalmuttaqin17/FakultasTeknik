@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('blog.blog');
 // });
 Auth::routes();
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::get('/blog/{slug}', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
 
@@ -39,3 +39,6 @@ Route::resource('users', App\Http\Controllers\UserController::class);
 Route::resource('tags', App\Http\Controllers\TagController::class);
 
 Route::resource('beritaTags', App\Http\Controllers\BeritaTagsController::class);
+
+
+Route::resource('galleries', App\Http\Controllers\GalleryController::class);

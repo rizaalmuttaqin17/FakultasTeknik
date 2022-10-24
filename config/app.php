@@ -238,7 +238,5 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
 
         'Datatables' => Yajra\DataTables\Facades\DataTables::class,
-
     ],
-
 ];

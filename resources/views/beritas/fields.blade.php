@@ -14,7 +14,7 @@
 <!-- Tag Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tags', 'Tags') !!}
-    <button type="button" class="btn btn-info btn-sm" data-target="#addTags" data-toggle="modal"><i class="fa fa-plus"></i>Tambah Tag</button>
+    {{-- <button type="button" class="btn btn-info btn-sm" data-target="#addTags" data-toggle="modal"><i class="fa fa-plus"></i>Tambah Tag</button> --}}
     {!! Form::select('tags[]', $tags, null, ['class' => 'tags form-control', 'multiple', 'required']) !!}
 </div>
 
@@ -47,6 +47,7 @@
             });
             $(".tags").select2({
                 placeholder: "Pilih Tags...",
+                tags: true
             });
             $(".tags_new").select2({
                 placeholder: "Tambah Tags...",

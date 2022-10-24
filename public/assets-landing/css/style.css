@@ -250,10 +250,7 @@ Navbar Area CSS
 }
 
 .exto-nav {
-  background-color: transparent;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #e5e5e5;
+  background-color: #152C5B;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 0;
@@ -282,7 +279,7 @@ Navbar Area CSS
 }
 .exto-nav .navbar .navbar-nav .nav-item a {
   font-size: 16px;
-  color: #152C5B;
+  color: #fff;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
@@ -292,7 +289,7 @@ Navbar Area CSS
 }
 .exto-nav .navbar .navbar-nav .nav-item a:hover, .exto-nav .navbar .navbar-nav .nav-item a:focus, .exto-nav .navbar .navbar-nav .nav-item a.active {
   font-weight: 700;
-  color: #152C5B;
+  color: #fff;
 }
 .exto-nav .navbar .navbar-nav .nav-item a i {
   font-size: 16px;
@@ -307,7 +304,7 @@ Navbar Area CSS
   margin-left: 0;
 }
 .exto-nav .navbar .navbar-nav .nav-item:hover a, .exto-nav .navbar .navbar-nav .nav-item:focus a, .exto-nav .navbar .navbar-nav .nav-item.active a {
-  color: #2677D8;
+  color: #fff;
 }
 .exto-nav .navbar .navbar-nav .nav-item .dropdown-menu {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
@@ -342,7 +339,7 @@ Navbar Area CSS
   color: #2677D8;
 }
 .exto-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu {
-  left: -245px;
+  left: 200px;
   top: 0;
   opacity: 0;
   visibility: hidden;
@@ -5573,20 +5570,21 @@ Page Title Area CSS
 .page-title-area {
   position: relative;
   z-index: 1;
-  background-color: #e6e6e6;
+  background-color: #152C5B;
   padding-top: 100px;
+  padding-bottom: 100px;
   z-index: 1;
-  /* &::before {
-      position: absolute;
-      content: "";
-      height: 100%;
-      width: 100%;
-      background-color: #e6e6e6;
-      left: 0;
-      top: 0;
-      opacity: 0.7;
-      z-index: -1;
-  } */
+}
+.page-title-area::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #152C5B;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .page-title-content {
@@ -5595,17 +5593,9 @@ Page Title Area CSS
 }
 .page-title-content h2 {
   margin-bottom: 0;
-  color: #152C5B;
+  color: #fff;
   font-size: 42px;
   font-weight: 700;
-}
-.page-title-content img {
-  margin-bottom: -100px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .page-title-content ul {
   padding-left: 0;

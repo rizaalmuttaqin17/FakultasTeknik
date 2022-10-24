@@ -130,7 +130,7 @@ Fakultas Teknik
                         @if ($loop->first)
                         <div class="col-lg-12">
                             <div class="blog">
-                                <a href="{{ route('blog', $berita->slug) }}">
+                                <a href="{{ route('blog-detail', $berita->slug) }}">
                                     <div class="row">
                                         <div class="col-lg-6 align-self-center">
                                             <ul class="blog-list">

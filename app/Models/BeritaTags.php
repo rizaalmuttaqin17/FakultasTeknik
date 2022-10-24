@@ -59,5 +59,8 @@ class BeritaTags extends Model
         'deleted_at' => 'nullable'
     ];
 
-    
+    public function tags()
+    {
+        return $this->belongsTo(\App\Models\Tag::class, 'tag_id');
+    }
 }

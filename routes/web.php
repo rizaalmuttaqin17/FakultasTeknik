@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('blog.blog');
 // });
 Auth::routes();
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
+
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
-Route::get('/blog/{slug}', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
+Route::get('/blog', [App\Http\Controllers\WelcomeController::class, 'blog'])->name('blog');
+Route::get('/blog-detail/{slug}', [App\Http\Controllers\WelcomeController::class, 'blogDetail'])->name('blog-detail');
+Route::get('/dokumen', [App\Http\Controllers\WelcomeController::class, 'dokumen'])->name('dokumen');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,8 +37,7 @@ Route::resource('kategoris', App\Http\Controllers\KategoriController::class);
 Route::resource('users', App\Http\Controllers\UserController::class);
 
 Route::resource('tags', App\Http\Controllers\TagController::class);
-
 Route::resource('beritaTags', App\Http\Controllers\BeritaTagsController::class);
-
-
 Route::resource('galleries', App\Http\Controllers\GalleryController::class);
+
+Route::resource('dokumens', App\Http\Controllers\DokumenController::class);

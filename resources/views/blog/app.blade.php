@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Universitas Nahdlatul Ulama Kalimantan Timur Adalah Universitas Berkelas Nasional Dari Nahdlatul Ulama yang Unggul dan Inovatif Untuk Mencerdaskan Kehidupan Bangsa">
+    <meta name="keywords" content="UNU Kaltim, Universitas Nahdlatul Ulama Kalimantan Timur, Nahdlatul Ulama University of East Kalimantan, Kaltim, Kalimantan Timur, Samarinda, Samarinda Seberang, Loa Janan Ilir, Indonesia, Universitas Kerakyatan, Universitas Terbaik di Kalimantan Timur, Teknologi, Teknik, Engineering, Insinyur, pertanian, farmasi, pengobatan, akuntansi, pendidikan anak, pendidikan anak usia dini, informatika, hubungan internasional, ilmu komunikasi, industri, arsitektur, desain, desain interior, islam, Nahdlatul Ulama, Kuliah kerja nyata, peneltian, pengabdian pada masyarakat, Rapak Dalam, Teknologi Industri Pertanian, Mahasiswa, Universitas">
     <link rel="stylesheet" href="{{ asset('assets-landing/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-landing/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets-landing/css/flaticon.css') }}">
@@ -38,7 +40,7 @@
                 <div class="exto-responsive-menu">
                     <div class="logo">
                         <a href="/">
-                            <img src="{{ asset('img/logo-teknik.png') }}" alt="logo">
+                            <img src="{{ asset('img/logo-teknik-white.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -49,7 +51,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('img/logo-teknik.png') }}" alt="logo">
+                        <img src="{{ asset('img/logo-teknik-white.png') }}" alt="logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
@@ -83,7 +85,27 @@
                                         <a href="" class="nav-link">Panduan Pendidikan FT</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">Program Studi</a>
+                                        <a href="" class="nav-link">
+                                            Program Studi
+                                        <i class="fa fa-angle-right"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Arsitektur</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Desain Interior</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Teknik Industri</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Teknik Informatika</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Teknologi Industri Pertanian</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a href="" class="nav-link">Kalender Akademik</a>
@@ -91,10 +113,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Berita </a>
+                                <a href="{{ route('blog') }}" class="nav-link">Berita </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Dokumen</a>
+                                <a href="{{ route('dokumen') }}" class="nav-link">Dokumen</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Repository</a>

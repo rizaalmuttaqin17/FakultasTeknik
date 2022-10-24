@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
@@ -83,19 +82,11 @@
             }
         };
     }(jQuery));
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#berita').summernote({
             tabsize: 2,
-            dialogsInBody: true,
-            // height: 100
+            dialogsInBody: true
         });
     });
 </script>
-{{-- <script>
-    CKEDITOR.replace('berita', {
-        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
-    });
-</script>  --}}
-
 </html>

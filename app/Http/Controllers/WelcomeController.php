@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Dokumen;
+use App\Models\Kategori;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -14,17 +17,27 @@ class WelcomeController extends Controller
         // $data = Berita::all();
         return view('blog.welcome', compact('berita', 'beritas'));
     }
+    
+    public function blog()
+    {
+        $berita = Berita::get();
+        return view('blog.blog', compact('berita'));
+    }
 
-    public function blog($slug)
+    public function blogDetail($slug)
     {
         $berita = Berita::where('slug', $slug)->first();
+        $beritas = Berita::take(3)->latest('created_at')->get();
+        $kategori = Kategori::all();
+        $beritaTags = Tag::all();
         // return $berita;
-        return view('blog.blog-detail', compact('berita'));
+        return view('blog.blog-detail', compact('berita', 'beritas', 'kategori', 'beritaTags'));
     }
 
-    public function detail($id)
+    public function dokumen()
     {
-        $berita = Berita::first();
-        return view('blog.detail-blog', compact('berita'));
+        $dokumen = Dokumen::get();
+        return view('blog.dokumen', compact('dokumen'));
     }
+
 }

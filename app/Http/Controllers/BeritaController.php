@@ -109,7 +109,20 @@ class BeritaController extends AppBaseController
         $input['users_id'] = Auth::id();
         $input['slug'] = Str::slug($input['judul']);
         $berita = $this->beritaRepository->create($input);
-        $berita->tags()->attach($request['tags']);
+        $berita->tags()->detach();
+        $tagged = [];
+        for($i=0; $i<COUNT($request['tags']); $i++){
+            $tagged = Tag::select('id')->where('id', $request['tags'][$i])->first();
+            if($tagged == null){
+                $tags = Tag::updateOrCreate([
+                    'nama' => $request['tags'][$i],
+                    'slug' => Str::slug($request['tags'][$i])
+                ])->id;
+                $berita->tags()->syncWithoutDetaching($tags);
+            } else {
+                $berita->tags()->syncWithoutDetaching($request['tags'][$i]);
+            }
+        }
 
         Flash::success('Berita saved successfully.');
         return redirect(route('beritas.index'));

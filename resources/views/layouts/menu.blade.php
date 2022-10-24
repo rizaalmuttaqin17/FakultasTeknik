@@ -1,4 +1,4 @@
-<li class="side-menus {{ Request::is('*') ? 'active' : '' }}">
+<li class="side-menus {{ Request::is('home*') ? 'active' : '' }}">
     <a class="nav-link" href="/">
         <i class=" fas fa-building"></i><span>Dashboard</span>
     </a>
@@ -45,5 +45,9 @@
 
 <li class="side-menus {{ Request::is('galleries*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('galleries.index') }}"><i class="fas fa-building"></i><span>Galleries</span></a>
+</li>
+
+<li class="side-menus {{ Request::is('dokumens*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('dokumens.index') }}"><i class="fas fa-building"></i><span>Dokumens</span></a>
 </li>
 

@@ -63,4 +63,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(\App\Models\Berita::class)->withTimestamps();
     }
+
+    public function beritaTags()
+    {
+        return $this->hasMany(\App\Models\BeritaTags::class, 'tag_id');
+    }
 }

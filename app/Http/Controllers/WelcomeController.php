@@ -15,7 +15,7 @@ class WelcomeController extends Controller
         $berita = Berita::first();
         $beritas = Berita::take(4)->get();
         // $data = Berita::all();
-        return view('blog.welcome', compact('berita', 'beritas'));
+        return view('welcome', compact('berita', 'beritas'));
     }
     
     public function blog()

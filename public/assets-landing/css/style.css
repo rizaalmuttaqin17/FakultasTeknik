@@ -1743,19 +1743,23 @@ Benefit Section CSS
 
 .benefit-area-content {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
-  padding: 25px;
   position: relative;
   margin-bottom: 50px;
   transition: 0.5s;
   border-radius: 15px;
 }
 .benefit-area-content h3 {
+  background: #ffffff;
+  margin-top: -34px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
   font-size: 20px;
-  margin: 25px 0 14px 0;
   transition: 0.5s;
 }
 .benefit-area-content p {
+  background-color: #ffffff;
+  padding: 25px;
   font-size: 14px;
   color: #a0a0a0;
   font-weight: 400;
@@ -3152,7 +3156,6 @@ Productive Section CSS
 
 .productive-area-content {
   position: relative;
-  padding-left: 75px;
   margin-bottom: 30px;
 }
 .productive-area-content .icon i {
@@ -3171,9 +3174,8 @@ Productive Section CSS
   font-size: 40px;
 }
 .productive-area-content h3 {
-  font-size: 20px;
-  color: #444444;
-  margin: 0 0 10px 0;
+  font-size: 32px;
+  margin: 0 0 20px 0;
 }
 .productive-area-content p {
   color: #827f8d;
@@ -3261,7 +3263,6 @@ Project Section CSS
 }
 .project-title h3 {
   font-size: 38px;
-  color: #624272;
   margin: 10px 0 0 0;
   max-width: 510px;
 }
@@ -3311,7 +3312,7 @@ Project Section CSS
   right: 0;
   bottom: 0;
   margin: 5px;
-  background-color: #ff8b00;
+  background-color: #2677D8;
   z-index: -1;
   border-radius: 2px;
 }

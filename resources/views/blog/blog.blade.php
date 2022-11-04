@@ -1,4 +1,4 @@
-@extends('blog.app')
+@extends('landing-layouts.app')
 @section('title')
     Berita Fakultas Teknik
 @endsection

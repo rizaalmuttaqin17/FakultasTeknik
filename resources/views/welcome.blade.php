@@ -1,4 +1,4 @@
-@extends('blog.app')
+@extends('landing-layouts.app')
 @section('title')
 Fakultas Teknik
 @endsection
@@ -563,7 +563,7 @@ Fakultas Teknik
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/arsitektur.png') }}" alt="">
                     <h3>Arsitektur</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
                         natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
@@ -572,7 +572,7 @@ Fakultas Teknik
 
             <div class="col-lg-4 col-md-4">
                 <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/desain-interior.png') }}" alt="">
                     <h3>Desain Interior</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
                         natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
@@ -581,7 +581,7 @@ Fakultas Teknik
 
             <div class="col-lg-4 col-md-4">
                 <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/teknik-industri.png') }}" alt="">
                     <h3>Teknik Industri</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
                         natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
@@ -590,7 +590,7 @@ Fakultas Teknik
 
             <div class="col-lg-4 col-md-4">
                 <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/teknik-informatika.png') }}" alt="">
                     <h3>Teknik Informatika</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
                         natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
@@ -599,7 +599,7 @@ Fakultas Teknik
 
             <div class="col-lg-4 col-md-4">
                 <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/tip.png') }}" alt="">
                     <h3>Teknologi Industri Pertanian</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
                         natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
@@ -613,109 +613,126 @@ Fakultas Teknik
 <section class="productive-section">
     <div class="container">
         <div class="productive-title">
-            <h3>Kenapa Harus Memilih Fakultas Teknik</h3>
+            <h3>Aktivitas Mahasiswa</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolet, consectetur adipiscing seore suspendisse ultrices gravir.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="productive-area-content">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
+                <div class="productive-area-content">
+                    <h3>Magang Industri</h3>
+                    <p>Salah satu program yang wajih diikuti oleh mahasiswa Fakultas Teknik adalah magang industri di perusahaan mitra fakultas. Dalam hal ini Fakultas Teknik telah menjalin hubungan kerjasama dengan stakeholder baik instansi pemerintah maupun swasta</p>
+                    <a href="" class="default-btn mt-5">Lihat Selengkapnya</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 align-self-center mt-2">
+                <div class="productive-area-content">
+                    <h3>Pembelajaran Hybrid</h3>
+                    <p>Kegiatan pembelajaran di FTMM dilaksanakan secara hybrid. Perkuliahan luring atau tatap muka dilangsungkan dengan penerapan protokol kesehatan yang ketat. Sedangkan perkuliahan daring dilaksanakan melalui platform elearning Universitas Nahdlatul Ulama Kalimantan Timur</p>
+                    <a href="" class="default-btn mt-5">Lihat Selengkapnya</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+                <div class="productive-area-content">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start Project Section -->
+<section class="project-section pt-70">
+    <div class="container">
+        <div class="project-title">
+            {{-- <span>Our Project Gallery</span> --}}
+            <h3>Gallery Fakultas Teknik</h3>
+            <div class="project-btn">
+                <a href="single-projects.html" class="default-btn">Visit Gallery</a>
+            </div>
         </div>
 
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-headphones"></i>
-                    </div>
-                    <h3>Customer Assistance</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-tag"></i>
-                    </div>
-                    <h3>Affordable Prices</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-cyber-security"></i>
-                    </div>
-                    <h3>Global Presence</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-innovation"></i>
-                    </div>
-                    <h3>Innovative Ideas</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-content"></i>
-                    </div>
-                    <h3>Content Marketing</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="productive-area-content">
-                    <div class="icon">
-                        <i class="flaticon-unlink"></i>
-                    </div>
-                    <h3>Pro Building Services</h3>
-                    <p>Lorem ipsum dolor sitamet cosectetur adipising elit sed do eiusmod tempor.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Start Support Section -->
-<section class="support-section pt-70 pb-70">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="support-image">
+                <div class="single-project-item">
                     <img src="{{ asset('img/photos/blog.png') }}" alt="image">
-                    <div class="support-arrow">
-                        <img src="{{ asset('assets-landing/img/support/3.png') }}" class="wow fadeInRight"
-                            data-wow-delay="0.6s" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">SEO Consultancy</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="support-area-content">
-                    <h3>Mari Bergabung Bersama Kami</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, temporibus autem! Provident,
-                        soluta quod atque libero magnam accusamus quasi inventore enim accusamus quasi laboriosam
-                        voluptates laudantium veritatis aliquid labore error molestiae nulla?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, impedit debitis! Ipsum
-                        ratione dolore sit numquam dicta ex officiis accusantium accusamus iure nihil? Accusamus
-                        aspernatur harum provident.</p>
-                    <div class="support-btn">
-                        <a href="#" class="default-btn">
-                            Learn More
-                            <i class="fa fa-arrow-right"></i>
-                        </a>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-project-item">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">Digital Marketing</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-sm-3 offset-lg-0">
+                <div class="single-project-item">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">Social Media Marketing</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-project-item">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">SEO Consultancy</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-project-item">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">Digital Marketing</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-sm-3 offset-lg-0">
+                <div class="single-project-item">
+                    <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                    <div class="project-content">
+                        <h3>
+                            <a href="single-projects.html">Social Media Marketing</a>
+                        </h3>
+                        <p>20, Deceember 2021</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- End Support Section -->
+<!-- End Project Section -->
 
 <!-- Start Partner Section -->
 <div class="partner-section pb-70">

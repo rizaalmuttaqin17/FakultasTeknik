@@ -65,13 +65,33 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">Sejarah Fakultas</a>
+                                        <a href="" class="nav-link">Profil Fakultas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">Visi, Misi, dan Tujuan</a>
+                                        <a href="" class="nav-link">
+                                            Profil Dosen Fakultas
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Profil Dosen Arsitektur</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Profil Dosen Desain Interior</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Profil Dosen Teknik Industri</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Profil Dosen Teknik Informatika</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="" class="nav-link">Profil Dosen Teknologi Industri Pertanian</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">Profil Staff Dosen</a>
+                                        <a href="" class="nav-link">Kerjasama Fakultas</a>
                                     </li>
                                 </ul>
                             </li>
@@ -82,13 +102,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">Panduan Pendidikan FT</a>
+                                        <a href="" class="nav-link">Panduan Pendidikan Fakultas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link">
-                                            Program Studi
-                                        <i class="fa fa-angle-right"></i>
-                                        </a>
+                                        <a href="" class="nav-link">Program Studi<i class="fa fa-angle-right"></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
                                                 <a href="" class="nav-link">Arsitektur</a>
@@ -131,7 +148,7 @@
 
     @yield('content')
 
-    @include('blog.footer')
+    @include('landing-layouts.footer')
     <script src="{{ asset('assets-landing/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets-landing/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets-landing/js/bootstrap.min.js') }}"></script>

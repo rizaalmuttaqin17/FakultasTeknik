@@ -11,22 +11,22 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                    <h3>Company</h3>
+                    <h3>Program Studi</h3>
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="#">Support Center</a>
+                            <a href="#">Teknik Arsitektur</a>
                         </li>
                         <li>
-                            <a href="#">Popular Campaign</a>
+                            <a href="#">Teknik Desain Interior</a>
                         </li>
                         <li>
-                            <a href="#">Customer Support</a>
+                            <a href="#">Teknik Industri</a>
                         </li>
                         <li>
-                            <a href="#">Copyright</a>
+                            <a href="#">Teknik Informatika</a>
                         </li>
                         <li>
-                            <a href="#">Latest News</a>
+                            <a href="#">Teknologi Industri Pertanian</a>
                         </li>
                     </ul>
                 </div>

@@ -1958,24 +1958,37 @@ Benefit Section CSS
     margin-bottom: 50px;
     transition: $transition;
     border-radius: 15px;
-    h3 {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    h3{
         background: $white-color;
-        margin-top: -34px;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-bottom: 25px;
+        display: inline-block;
+        margin-top: -44px;
+        margin-bottom: 0;
+        padding: 10px 25px;
         font-size: 20px;
-        // margin: 25px 0 14px 0;
+        border-radius: 0 10px 0 0;
         transition: $transition;
+        -webkit-border-radius: 0 10px 0 0;
+        -moz-border-radius: 0 10px 0 0;
+        -ms-border-radius: 0 10px 0 0;
+        -o-border-radius: 0 10px 0 0;
     }
     p {
         background-color: $white-color;
         padding: 25px;
         font-size: 14px;
-        color: #a0a0a0;
+        color: #A3A3A3;
         font-weight: 400;
         transition: $transition;
-    }
+        border-radius: 0 0 15px 15px;
+        -webkit-border-radius: 0 0 15px 15px;
+        -moz-border-radius: 0 0 15px 15px;
+        -ms-border-radius: 0 0 15px 15px;
+        -o-border-radius: 0 0 15px 15px;
+}
     &:hover {
         transform: translateY(-10px);
     }

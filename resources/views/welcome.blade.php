@@ -614,13 +614,11 @@ Fakultas Teknik
     <div class="container">
         <div class="productive-title">
             <h3>Aktivitas Mahasiswa</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolet, consectetur adipiscing seore suspendisse ultrices gravir.</p>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="productive-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/magang-industri.png') }}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
@@ -639,7 +637,7 @@ Fakultas Teknik
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
                 <div class="productive-area-content">
-                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
+                    <img src="{{ asset('img/photos/pembelajaran-hybrid.png') }}" alt="">
                 </div>
             </div>
         </div>

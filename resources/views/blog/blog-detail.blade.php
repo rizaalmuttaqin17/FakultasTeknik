@@ -140,7 +140,7 @@
                         <h3 class="widget-title">Tags</h3>
                         <div class="tagcloud">
                             @foreach ($beritaTags as $item)
-                                <a href="#">{{ $item['nama'] }} <span class="tag-link-count">({{ $item['beritaTags']->count() }})</span></a>
+                                <a href="#">{{ $item['tags']['nama'] }} <span class="tag-link-count">({{ $item['tags']['beritaTags']->count() }})</span></a>
                             @endforeach
                         </div>
                     </section>

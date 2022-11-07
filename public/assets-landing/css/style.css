@@ -1747,23 +1747,37 @@ Benefit Section CSS
   margin-bottom: 50px;
   transition: 0.5s;
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 .benefit-area-content h3 {
   background: #ffffff;
-  margin-top: -34px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
+  display: inline-block;
+  margin-top: -44px;
+  margin-bottom: 0;
+  padding: 10px 25px;
   font-size: 20px;
+  border-radius: 0 10px 0 0;
   transition: 0.5s;
+  -webkit-border-radius: 0 10px 0 0;
+  -moz-border-radius: 0 10px 0 0;
+  -ms-border-radius: 0 10px 0 0;
+  -o-border-radius: 0 10px 0 0;
 }
 .benefit-area-content p {
   background-color: #ffffff;
   padding: 25px;
   font-size: 14px;
-  color: #a0a0a0;
+  color: #A3A3A3;
   font-weight: 400;
   transition: 0.5s;
+  border-radius: 0 0 15px 15px;
+  -webkit-border-radius: 0 0 15px 15px;
+  -moz-border-radius: 0 0 15px 15px;
+  -ms-border-radius: 0 0 15px 15px;
+  -o-border-radius: 0 0 15px 15px;
 }
 .benefit-area-content:hover {
   transform: translateY(-10px);

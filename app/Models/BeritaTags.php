@@ -63,4 +63,9 @@ class BeritaTags extends Model
     {
         return $this->belongsTo(\App\Models\Tag::class, 'tag_id');
     }
+
+    public function beritas()
+    {
+        return $this->belongsTo(\App\Models\Berita::class, 'berita_id');
+    }
 }

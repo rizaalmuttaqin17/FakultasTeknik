@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\BeritaTags;
 use App\Models\Dokumen;
 use App\Models\Kategori;
 use App\Models\Tag;
@@ -29,8 +30,7 @@ class WelcomeController extends Controller
         $berita = Berita::where('slug', $slug)->first();
         $beritas = Berita::take(3)->latest('created_at')->get();
         $kategori = Kategori::all();
-        $beritaTags = Tag::all();
-        // return $berita;
+        $beritaTags = BeritaTags::where('berita_id', $berita['id'])->get();
         return view('blog.blog-detail', compact('berita', 'beritas', 'kategori', 'beritaTags'));
     }
 

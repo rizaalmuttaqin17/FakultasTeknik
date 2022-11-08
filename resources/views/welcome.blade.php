@@ -554,6 +554,59 @@ Fakultas Teknik
 </section>
 <!-- End Software Section -->
 
+<section class="pricing-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <div class="pricing-area-content seo-price-title">
+                    <h3>Visi Fakultas Teknik</h3>
+                    <p>Menjadi Fakultas Teknik yang terkemuka dalam tridarma berlandaskan Ahlussunah Wal Jamaah dan kebangsaan di Kalimantan Timur pada tahun 2030.</p>
+                </div>
+                <div class="pricing-btn-wrap">
+                    {{-- <div class="price-btn">
+                        <a href="pricing.html" class="price-btn-one">
+                            Pricing Plan
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div> --}}
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-8">
+                <div class="single-pricing-box seo-price price-z">
+                    <div class="pricing-header">
+                        <h3>Misi Kami</h3>
+                    </div>
+                    <div class="price">
+                        {{-- $56/ <span>Monthly</span> --}}
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Menyelenggarakan pendidikan dan pengajaran yang beretika keislaman dan kebangsaan.</li>
+                        <li>Menyelenggarakan penelitian dan pengabdian kepada masyarakat yang bermanfaat.</li>
+                        <li>Menjalin kerja sama dengan lembaga lain.</li>
+                    </ul>
+                </div>   
+            </div>
+
+            <div class="col-lg-4 col-md-8">
+                <div class="single-pricing-box table-price seo-price">
+                    <div class="pricing-header">
+                        <h3>Tujuan Kami</h3>
+                    </div>
+                    <div class="price">
+                        {{-- $70/ <span>Monthly</span> --}}
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Tercapainya lulusan kompetitif yang memiliki prinsip Ahlussunah Wal Jamaah dan menjunjung tinggi nilai kebangsaan.</li>
+                        <li>Berperan serta dalam kemajuan penelitian dan pengabdian kepada masyarakat.</li>
+                        <li>Terjalinnya kerja sama dengan lembaga lain.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Start Benefit Section -->
 <section class="benefit-section pb-70">
     <div class="container">
@@ -624,14 +677,14 @@ Fakultas Teknik
             <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
                 <div class="productive-area-content">
                     <h3>Magang Industri</h3>
-                    <p>Salah satu program yang wajih diikuti oleh mahasiswa Fakultas Teknik adalah magang industri di perusahaan mitra fakultas. Dalam hal ini Fakultas Teknik telah menjalin hubungan kerjasama dengan stakeholder baik instansi pemerintah maupun swasta</p>
+                    <p>Salah satu program yang wajib diikuti oleh seluruh mahasiswa Fakultas Teknik adalah magang industri baik di perusahaan mitra fakultas maupun yang bukan mitra fakultas. Guna Menunjang program magang industri, Fakultas Teknik telah menjalin banyak kerjasama baik itu instansi pemerintah maupun swasta</p>
                     <a href="" class="default-btn mt-5">Lihat Selengkapnya</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 align-self-center mt-2">
                 <div class="productive-area-content">
                     <h3>Pembelajaran Hybrid</h3>
-                    <p>Kegiatan pembelajaran di FTMM dilaksanakan secara hybrid. Perkuliahan luring atau tatap muka dilangsungkan dengan penerapan protokol kesehatan yang ketat. Sedangkan perkuliahan daring dilaksanakan melalui platform elearning Universitas Nahdlatul Ulama Kalimantan Timur</p>
+                    <p>Kegiatan pembelajaran di Fakultas Teknik dilaksanakan secara hybrid. Perkuliahan luring atau tatap muka dilangsungkan dengan penerapan protokol kesehatan yang ketat. Sedangkan perkuliahan daring dilaksanakan melalui platform elearning Universitas Nahdlatul Ulama Kalimantan Timur</p>
                     <a href="" class="default-btn mt-5">Lihat Selengkapnya</a>
                 </div>
             </div>
@@ -645,7 +698,7 @@ Fakultas Teknik
 </section>
 
 <!-- Start Project Section -->
-<section class="project-section pt-70">
+<section class="project-section ptb-100">
     <div class="container">
         <div class="project-title">
             {{-- <span>Our Project Gallery</span> --}}
@@ -733,7 +786,7 @@ Fakultas Teknik
 <!-- End Project Section -->
 
 <!-- Start Partner Section -->
-<div class="partner-section pb-70">
+<div class="partner-section">
     <div class="container">
         <div class="partner-slider owl-carousel owl-theme">
             <div class="partner-item">

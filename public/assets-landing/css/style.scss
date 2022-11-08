@@ -2374,7 +2374,7 @@ Pricing Section CSS
             z-index: 111;
         }
         .pricing-header {
-            background-color: #150346;
+            background-color: $black-color;
             position: relative;
             z-index: 1;
             &::before {
@@ -2400,7 +2400,7 @@ Pricing Section CSS
                 border-radius: 50%;
             }
             h3 {
-                color: #bbb1de;
+                color: $white-color;
             }
         }
         .price {
@@ -2423,14 +2423,14 @@ Pricing Section CSS
         font-size: 30px;
         color: #5b616f;
         font-weight: bold;
-        padding: 20px;
+        padding: 10px;
         position: relative;
         &::before {
             position: absolute;
             content: "";
             height: 1px;
             width: 180px;
-            background-color: #e5e3eb;
+            // background-color: #e5e3eb;
             bottom: 12px;
             left: 0;
             right: 0;
@@ -2443,13 +2443,14 @@ Pricing Section CSS
     }
     .pricing-features {
         padding-left: 30px;
-        margin-bottom: 0;
+        margin: 0 15px;
         text-align: left;
         li {
-            list-style-type: none;
+            list-style-type: disc;
             font-size: 16px;
             color: #827f8d;
             font-weight: 400;
+            padding: 5px 20px 5px 10px;
             margin-bottom: 5px;
             &:last-child {
                 margin-bottom: 0;

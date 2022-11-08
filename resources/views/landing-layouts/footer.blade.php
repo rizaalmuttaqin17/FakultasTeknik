@@ -78,7 +78,7 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="social-list">
+                    {{-- <ul class="social-list">
                         <li>
                             <a href="#" class="facebook" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
@@ -99,7 +99,7 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>

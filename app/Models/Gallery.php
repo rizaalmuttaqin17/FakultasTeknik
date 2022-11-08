@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Gallery
  * @package App\Models
- * @version October 24, 2022, 12:02 am UTC
+ * @version November 7, 2022, 11:37 pm UTC
  *
  * @property \App\Models\User $user
  * @property string $judul

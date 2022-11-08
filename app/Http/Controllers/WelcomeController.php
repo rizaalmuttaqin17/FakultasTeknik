@@ -40,4 +40,44 @@ class WelcomeController extends Controller
         return view('blog.dokumen', compact('dokumen'));
     }
 
+    public function arsitektur()
+    {
+        $berita = Berita::first();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
+        return view('arsitektur', compact('berita', 'beritas'));
+    }
+
+    public function desainInterior()
+    {
+        $berita = Berita::first();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
+        return view('desain-interior', compact('berita', 'beritas'));
+    }
+
+    public function teknikIndustri()
+    {
+        $berita = Berita::first();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
+        return view('teknik-industri', compact('berita', 'beritas'));
+    }
+
+    public function teknikInformatika()
+    {
+        $berita = Berita::first();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
+        return view('teknik-informatika', compact('berita', 'beritas'));
+    }
+
+    public function tip()
+    {
+        $berita = Berita::first();
+        $beritas = Berita::take(4)->get();
+        // $data = Berita::all();
+        return view('tip', compact('berita', 'beritas'));
+    }
+
 }

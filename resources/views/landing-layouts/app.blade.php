@@ -108,19 +108,19 @@
                                         <a href="" class="nav-link">Program Studi<i class="fa fa-angle-right"></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">Arsitektur</a>
+                                                <a href="{{ route('arsitektur') }}" class="nav-link">Arsitektur</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">Desain Interior</a>
+                                                <a href="{{ route('desain-interior') }}" class="nav-link">Desain Interior</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">Teknik Industri</a>
+                                                <a href="{{ route('teknik-industri') }}" class="nav-link">Teknik Industri</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">Teknik Informatika</a>
+                                                <a href="{{ route('teknik-informatika') }}" class="nav-link">Teknik Informatika</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="" class="nav-link">Teknologi Industri Pertanian</a>
+                                                <a href="{{ route('teknologi-industri-pertanian') }}" class="nav-link">Teknologi Industri Pertanian</a>
                                             </li>
                                         </ul>
                                     </li>

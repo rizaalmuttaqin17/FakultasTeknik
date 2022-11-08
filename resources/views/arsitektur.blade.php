@@ -1,6 +1,6 @@
 @extends('landing-layouts.app')
 @section('title')
-Fakultas Teknik
+Prodi Arsitektur
 @endsection
 @section('content')
 <!-- Start Saas Home Area -->

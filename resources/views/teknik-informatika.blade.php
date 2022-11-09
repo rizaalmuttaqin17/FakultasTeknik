@@ -213,16 +213,32 @@ Prodi Teknik Informatika
             {{-- <h3>Aktivitas Mahasiswa</h3> --}}
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 align-self-center mt-2">
-                <div class="productive-area-content">
-                    <h3>Great Moment With Us</h3>
+            <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
+                <div class="productive-area-content-informatika">
+                    <h3>Great Moments With Us</h3>
                     <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
                     <a href="" class="default-btn mt-5">Lihat Selengkapnya</a>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 mt-2">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="productive-area-content">
                     <img src="{{ asset('img/photos/gallery-informatika.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="programmer-section pb-100">
+    <div class="container">
+        <div class="programmer-title">
+            {{-- <h3>Aktivitas Mahasiswa</h3> --}}
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                <div class="programmer-area-content">
+                    <h3>Are You Ready To Become A Programmer?</h3>
+                    <a href="" class="programmer-btn mt-5">Gabung Sekarang</a>
                 </div>
             </div>
         </div>

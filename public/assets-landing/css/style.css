@@ -3291,6 +3291,85 @@ Productive Section CSS
   margin: 0 0 0 0;
 }
 
+.productive-area-content-informatika {
+  position: relative;
+  margin-bottom: 30px;
+}
+.productive-area-content-informatika h3 {
+  font-size: 58px;
+  margin: 0 0 20px 0;
+}
+.productive-area-content-informatika p {
+  color: #a3a3a3;
+  font-weight: 400;
+  margin: 0 0 0 0;
+}
+
+/*================================================
+Programmer Section CSS
+=================================================*/
+.programmer-section {
+  position: relative;
+}
+
+.programmer-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.programmer-title span {
+  display: block;
+  font-size: 16px;
+  color: #ff8b00;
+  font-weight: 400;
+  margin-top: -5px;
+  text-transform: capitalize;
+}
+.programmer-title h3 {
+  font-size: 40px;
+  margin: 10px 0 12px 0;
+}
+.programmer-title p {
+  max-width: 750px;
+  margin: auto;
+}
+
+.programmer-area-content {
+  position: relative;
+  margin-bottom: 30px;
+  background: url(../../img/background/programmer.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10vh;
+}
+.programmer-area-content h3 {
+  font-size: 58px;
+}
+.programmer-area-content p {
+  color: #827f8d;
+  font-weight: 400;
+  margin: 0 0 0 0;
+}
+.programmer-area-content .programmer-btn {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #2677D8;
+  padding: 14px 25px;
+  font-size: 16px;
+  font-weight: 400;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.programmer-area-content .programmer-btn i {
+  position: relative;
+  top: 0px;
+  padding-left: 6px;
+  font-size: 14px;
+}
+.programmer-area-content .programmer-btn:hover {
+  background-color: #152C5B;
+  color: #ffffff !important;
+}
+
 /*================================================
 Needs Section CSS
 =================================================*/

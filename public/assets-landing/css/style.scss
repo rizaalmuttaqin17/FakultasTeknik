@@ -3541,6 +3541,88 @@ Productive Section CSS
         margin: 0 0 0 0;
     }
 }
+
+.productive-area-content-informatika {
+    position: relative;
+    // padding-left: 75px;
+    margin-bottom: 30px;
+    h3 {
+        font-size: 58px;
+        margin: 0 0 20px 0;
+    }
+    p {
+        color: #a3a3a3;
+        font-weight: 400;
+        margin: 0 0 0 0;
+    }
+}
+
+/*================================================
+Programmer Section CSS
+=================================================*/
+.programmer-section {
+    position: relative;
+}
+.programmer-title {
+    text-align: center;
+    margin-bottom: 50px;
+    span {
+        display: block;
+        font-size: 16px;
+        color: #ff8b00;
+        font-weight: 400;
+        margin-top: -5px;
+        text-transform: capitalize;
+    }
+    h3 {
+        font-size: 40px;
+        margin: 10px 0 12px 0;
+    }
+    p {
+        max-width: 750px;
+        margin: auto;
+    }
+}
+.programmer-area-content {
+    position: relative;
+    // padding-left: 75px;
+    margin-bottom: 30px;
+    background: url(../../img/background/programmer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10vh;
+    h3 {
+        font-size: 58px;
+    }
+    p {
+        color: #827f8d;
+        font-weight: 400;
+        margin: 0 0 0 0;
+    }
+
+    .programmer-btn {
+        display: inline-block;
+        color: $white-color;
+        background-color: $main-color;
+        padding: 14px 25px;
+        font-size: 16px;
+        font-weight: 400;
+        transition: $transition;
+        border-radius: 5px;
+        i {
+            position: relative;
+            top: 0px;
+            padding-left: 6px;
+            font-size: 14px;
+        }
+        &:hover {
+            background-color: $black-color;
+            color: $white-color !important;
+        }
+    }
+
+}
+
 /*================================================
 Needs Section CSS
 =================================================*/

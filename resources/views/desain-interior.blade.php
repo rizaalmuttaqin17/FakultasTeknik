@@ -16,7 +16,7 @@ Prodi Desain Interior
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-content">
-                            <span><i class="far fa-dot-circle"></i> &nbsp; Fakultas Teknik UNU Kaltim</span>
+                            <span><i class="far fa-dot-circle"></i> &nbsp; Program Studi Desain Interior</span>
                             <h1>Advancing Society Through Excellent People</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolet suspendisse ultrices gravida. </p>

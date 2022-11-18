@@ -16,8 +16,8 @@ Prodi Arsitektur
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-content">
-                            <span><i class="far fa-dot-circle"></i> &nbsp; Fakultas Teknik UNU Kaltim</span>
-                            <h1>Advancing Society Through Excellent People</h1>
+                            <span><i class="far fa-dot-circle"></i> &nbsp; Program Studi Arsitektur</span>
+                            <h1>Make Your Own Incredible Building</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolet suspendisse ultrices gravida. </p>
                             <div class="saas-btn">
@@ -42,517 +42,109 @@ Prodi Arsitektur
 </div>
 <!-- End Saas Home Area -->
 
-<!-- Start Fun Facts Area -->
-<section class="fun-facts-area">
+<!-- Start Blog Section -->
+<section class="blog-section startup-blog pt-100 pb-70">
     <div class="container">
+        <div class="blog-title">
+            <span>News update</span>
+            <h3>Seputar Arsitektur</h3>
+            <div class="blog-btn">
+                <a href="" class="blog-btn-one">Baca Selengkapnya</a>
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-fun-fact row">
-                    <div class="col-lg-4">
-                        <img src="{{ asset('img/icon/prodi.png') }}" alt="">
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <a href="">
+                            <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                        </a>
                     </div>
-                    <div class="col-lg-8">
-                        <h3><span class="odometer" data-count="5">00</span></h3>
-                        <p>Program Studi</p>
-                    </div>
-                </div>
+                    <div class="single-blog-item">
+                        <div class="blog-content">
+                            <a href="single-blog.html">
+                                <h3>Boost your Startup agency with Digital Agency</h3>
+                            </a>
+                            <p>Lorem ipsum dolor sit amconsectetur adipiscing elit, sed do eiusmodor.</p>
+                        </div>
+                        <ul class="blog-list">
+                            <li>
+                                <a href="single-blog.html">
+                                    <i class="flaticon-user"></i> 
+                                    Janathon Doe
+                                </a>
+                            </li>
+                            <li>
+                                <i class="flaticon-appointment"></i> 
+                                03 January 2021
+                            </li>
+                        </ul>
+                    </div>  
+                </div>  
             </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-fun-fact row">
-                    <div class="col-lg-4">
-                        <img src="{{ asset('img/icon/prodi.png') }}" alt="">
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <a href="">
+                            <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                        </a>
                     </div>
-                    <div class="col-lg-8">
-                        <h3>
-                            <span class="odometer" data-count="700">00</span><span class="sign-icon">+</span>
-                        </h3>
-                        <p>Mahasiswa</p>
-                    </div>
-                </div>
+                    <div class="single-blog-item">
+                        <div class="blog-content">
+                            <a href="single-blog.html">
+                                <h3>Boost your Startup agency with Digital Agency</h3>
+                            </a>
+                            <p>Lorem ipsum dolor sit amconsectetur adipiscing elit, sed do eiusmodor.</p>
+                        </div>
+                        <ul class="blog-list">
+                            <li>
+                                <a href="single-blog.html">
+                                    <i class="flaticon-user"></i> 
+                                    Janathon Doe
+                                </a>
+                            </li>
+                            <li>
+                                <i class="flaticon-appointment"></i> 
+                                03 January 2021
+                            </li>
+                        </ul>
+                    </div>  
+                </div>  
             </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-fun-fact row">
-                    <div class="col-lg-4">
-                        <img src="{{ asset('img/icon/prodi.png') }}" alt="">
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-item">
+                    <div class="blog-image">
+                        <a href="">
+                            <img src="{{ asset('img/photos/blog.png') }}" alt="image">
+                        </a>
                     </div>
-                    <div class="col-lg-8">
-                        <h3>
-                            <span class="odometer" data-count="30">00</span><span class="sign-icon">+</span>
-                        </h3>
-                        <p>Dosen Profesional</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-fun-fact row">
-                    <div class="col-lg-4">
-                        <img src="{{ asset('img/icon/prodi.png') }}" alt="">
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>
-                            <span class="odometer" data-count="10">00</span><span class="sign-icon">+</span>
-                        </h3>
-                        <p>Penghargaan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Fun Facts Area -->
-
-<!-- Start Software Section -->
-<section class="software-section pt-70 pb-70">
-    <div class="container">
-        <div class="software-title">
-            <h2>Blog</h2>
-        </div>
-        <div class="tab software-list-tab">
-            <ul class="tabs">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Akademik</a></li>
-                <li><a href="#">Desain</a></li>
-                <li><a href="#">Industri</a></li>
-                <li><a href="#">Teknologi</a></li>
-                <li><a href="#">Pertanian</a></li>
-                <li><a href="#">Lainnya</a></li>
-            </ul>
-            <div class="tab_content">
-
-                <div class="tabs_item">
-                    {{-- @if ($beritas->count()) --}}
-                    <div class="row">
-                        @foreach ($beritas as $item)
-                        {{-- @foreach ($berita as $item) --}}
-                        @if ($loop->first)
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="{{ route('blog-detail', $berita->slug) }}">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>{{ $item['kategori']['kategori'] }}</span>
-                                                </li>
-                                                <li>{{ \Carbon\Carbon::parse($item['created_at'])->locale('id')->isoFormat('DD MMMM Y') }}
-                                                </li>
-                                            </ul>
-                                            <h2 class="mb-4">{{ $item['judul'] }}</h2>
-                                            <p class="blog-content">{!! $item['isi'] !!}</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img-first" src="{{ $item['banner'] }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                    <div class="single-blog-item">
+                        <div class="blog-content">
+                            <a href="single-blog.html">
+                                <h3>Boost your Startup agency with Digital Agency</h3>
+                            </a>
+                            <p>Lorem ipsum dolor sit amconsectetur adipiscing elit, sed do eiusmodor.</p>
                         </div>
-                        @elseif ($loop->index)
-                        {{-- @endforeach --}}
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img class="blog-img" src="{{ $item['banner'] }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>{{ $item['kategori']['kategori'] }}</span></li>
-                                        <li>{{ \Carbon\Carbon::parse($item['created_at'])->locale('id')->isoFormat('DD MMMM Y') }}
-                                        </li>
-                                    </ul>
-                                    <h3>{{ $item['judul'] }}</h3>
+                        <ul class="blog-list">
+                            <li>
+                                <a href="single-blog.html">
+                                    <i class="flaticon-user"></i> 
+                                    Janathon Doe
                                 </a>
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
-                    </div>
-                    {{-- @endif --}}
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tabs_item">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="blog">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-lg-6 align-self-center">
-                                            <ul class="blog-list">
-                                                <li>
-                                                    <span>Teknik Industri</span>
-                                                </li>
-                                                <li>30 January 2021</li>
-                                            </ul>
-                                            <h2 class="mb-4">Teknologi Semi Cair dan Padat</h2>
-                                            <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolet suspendisse
-                                                ultrices gravida.</p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <img class="blog-img" src="{{ asset('img/photos/blog.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mt-3">
-                            <div class="blog">
-                                <a href="">
-                                    <img src="{{ asset('img/photos/blog.png') }}" alt="">
-                                    <ul class="blog-list mt-3">
-                                        <li><span>Teknik Industri</span></li>
-                                        <li>30 January 2021</li>
-                                    </ul>
-                                    <h3>Teknologi Semi Cair dan Padat</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-appointment"></i> 
+                                03 January 2021
+                            </li>
+                        </ul>
+                    </div>  
+                </div>  
             </div>
         </div>
     </div>
 </section>
-<!-- End Software Section -->
+<!-- End Blog Section -->
 
 <section class="sambutan-section pb-70">
     <div class="container">

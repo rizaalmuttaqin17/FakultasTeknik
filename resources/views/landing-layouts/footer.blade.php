@@ -14,19 +14,19 @@
                     <h3>Program Studi</h3>
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="#">Teknik Arsitektur</a>
+                            <a href="{{ route('arsitektur') }}">Arsitektur</a>
                         </li>
                         <li>
-                            <a href="#">Teknik Desain Interior</a>
+                            <a href="{{ route('desain-interior') }}">Desain Interior</a>
                         </li>
                         <li>
-                            <a href="#">Teknik Industri</a>
+                            <a href="{{ route('teknik-industri') }}">Teknik Industri</a>
                         </li>
                         <li>
-                            <a href="#">Teknik Informatika</a>
+                            <a href="{{ route('teknik-informatika') }}">Teknik Informatika</a>
                         </li>
                         <li>
-                            <a href="#">Teknologi Industri Pertanian</a>
+                            <a href="{{ route('teknologi-industri-pertanian') }}">Teknologi Industri Pertanian</a>
                         </li>
                     </ul>
                 </div>

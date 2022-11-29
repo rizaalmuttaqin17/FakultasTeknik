@@ -11,7 +11,7 @@ Prodi Arsitektur
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="saas-image">
-                            <img src="{{ asset('img/photos/header.png') }}" alt="image">
+                            <img src="{{ asset('img/photos/header-arsitektur.png') }}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -23,6 +23,20 @@ Prodi Arsitektur
                             <div class="saas-btn">
                                 <a href="pricing.html" class="saas-btn-one">Gabung Sekarang</a>
                             </div>
+                            <div class="row mt-5">
+                                <div class="col-lg-4">
+                                    <h3>10+</h3>
+                                    <p>Professional Lecture</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h3>10+</h3>
+                                    <p>Professional Lecture</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h3>10+</h3>
+                                    <p>Professional Lecture</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -33,14 +47,54 @@ Prodi Arsitektur
             </div>
         </div>
     </div>
-    <div class="shape-img2">
-        <div class="shape-bounce">
-            <img src="{{ asset('img/shape/1.png') }}" alt="image">
-        </div>
-    </div>
 </div>
 </div>
 <!-- End Saas Home Area -->
+
+<!-- Start Grow Section -->
+<section class="grow-section pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="grow-area-content">
+                    <h3>Be An Architect With Us</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptatibus sint aut laborum obcaecati necessitatibus reprehenderit architecto quod distinctio vitae ipsa repellendus molestias dignissimos quo, corporis.</p>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="grow-content-bar">
+                                <span><i class="fa fa-globe"></i></span>
+                                <h3>Design Building</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="grow-content-bar">
+                                <span><i class="fa fa-globe"></i></span>
+                                <h3>IT Repair</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="grow-content-bar">
+                                <span><i class="fa fa-globe"></i></span>
+                                <h3>Networking</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grow-btn">
+                        <a href="#" class="grow-btn-one">Gabung Sekarang
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="grow-image">
+                    <img src="{{ asset('img/photos/programmer-section.png') }}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Grow Section -->
 
 <!-- Start Blog Section -->
 <section class="blog-section startup-blog pt-100 pb-70">
@@ -343,7 +397,7 @@ Prodi Arsitektur
 <!-- End Project Section -->
 
 <!-- Start Partner Section -->
-<div class="partner-section">
+{{-- <div class="partner-section">
     <div class="container">
         <div class="partner-slider owl-carousel owl-theme">
             <div class="partner-item">
@@ -373,7 +427,7 @@ Prodi Arsitektur
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Partner Section -->
 
 </body>

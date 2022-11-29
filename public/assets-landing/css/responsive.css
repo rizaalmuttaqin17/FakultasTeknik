@@ -2912,9 +2912,6 @@
   .saas-home-area .circle-img {
     width: unset;
   }
-  .saas-home-area .saas-image img:last-child {
-    top: -95px;
-  }
   .freelancer-client-section .clients-wraps .client-all-img-1 {
     top: 0;
     right: 460px;

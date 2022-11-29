@@ -580,48 +580,58 @@ Fakultas Teknik
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4">
-                <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/arsitektur.png') }}" alt="">
-                    <h3>Arsitektur</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
-                        natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
-                </div>
+                <a href="{{ route('arsitektur') }}">
+                    <div class="benefit-area-content">
+                        <img src="{{ asset('img/photos/arsitektur.png') }}" alt="">
+                        <h3>Arsitektur</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
+                            natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-4">
-                <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/desain-interior.png') }}" alt="">
-                    <h3>Desain Interior</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
-                        natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
-                </div>
+                <a href="{{ route('desain-interior') }}">
+                    <div class="benefit-area-content">
+                        <img src="{{ asset('img/photos/desain-interior.png') }}" alt="">
+                        <h3>Desain Interior</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
+                            natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-4">
-                <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/teknik-industri.png') }}" alt="">
-                    <h3>Teknik Industri</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
-                        natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
-                </div>
+                <a href="{{ route('teknik-industri') }}">
+                    <div class="benefit-area-content">
+                        <img src="{{ asset('img/photos/teknik-industri.png') }}" alt="">
+                        <h3>Teknik Industri</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
+                            natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-4">
-                <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/teknik-informatika.png') }}" alt="">
-                    <h3>Teknik Informatika</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
-                        natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
-                </div>
+                <a href="{{ route('teknik-informatika') }}">
+                    <div class="benefit-area-content">
+                        <img src="{{ asset('img/photos/teknik-informatika.png') }}" alt="">
+                        <h3>Teknik Informatika</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
+                            natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-4">
-                <div class="benefit-area-content">
-                    <img src="{{ asset('img/photos/tip.png') }}" alt="">
-                    <h3>Teknologi Industri Pertanian</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
-                        natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
-                </div>
+                <a href="{{ route('teknologi-industri-pertanian') }}">
+                    <div class="benefit-area-content">
+                        <img src="{{ asset('img/photos/tip.png') }}" alt="">
+                        <h3>Teknologi Industri Pertanian</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, quos et. Quibusdam asperiores
+                            natus est nisi, enim, laudantium ut deleniti optio aspernatur deserunt.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -751,7 +761,7 @@ Fakultas Teknik
 <!-- End Project Section -->
 
 <!-- Start Partner Section -->
-<div class="partner-section">
+{{-- <div class="partner-section">
     <div class="container">
         <div class="partner-slider owl-carousel owl-theme">
             <div class="partner-item">
@@ -781,7 +791,7 @@ Fakultas Teknik
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Partner Section -->
 
 </body>

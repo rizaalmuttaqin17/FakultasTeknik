@@ -23,8 +23,8 @@ Route::get('/blog', [App\Http\Controllers\WelcomeController::class, 'blog'])->na
 Route::get('/blog-detail/{slug}', [App\Http\Controllers\WelcomeController::class, 'blogDetail'])->name('blog-detail');
 Route::get('/dokumen', [App\Http\Controllers\WelcomeController::class, 'dokumen'])->name('dokumen');
 Route::get('/arsitektur', [App\Http\Controllers\WelcomeController::class, 'arsitektur'])->name('arsitektur');
-Route::get('/desainInterior', [App\Http\Controllers\WelcomeController::class, 'desainInterior'])->name('desain-interior');
-Route::get('/teknikIndustri', [App\Http\Controllers\WelcomeController::class, 'teknikIndustri'])->name('teknik-industri');
+Route::get('/desain-interior', [App\Http\Controllers\WelcomeController::class, 'desainInterior'])->name('desain-interior');
+Route::get('/teknik-industri', [App\Http\Controllers\WelcomeController::class, 'teknikIndustri'])->name('teknik-industri');
 Route::get('/teknik-informatika', [App\Http\Controllers\WelcomeController::class, 'teknikInformatika'])->name('teknik-informatika');
 Route::get('/tip', [App\Http\Controllers\WelcomeController::class, 'tip'])->name('teknologi-industri-pertanian');
 
